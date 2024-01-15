@@ -575,6 +575,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 65001022610182544, guid: b492792808d3e244cbf3b9094966fd33, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3673890855723800777, guid: b492792808d3e244cbf3b9094966fd33, type: 3}
       propertyPath: m_Name
       value: FoodMachine (1)
@@ -910,7 +914,7 @@ GameObject:
   - component: {fileID: 358510247}
   - component: {fileID: 358510246}
   m_Layer: 0
-  m_Name: MiddleLayer
+  m_Name: layer3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -929,7 +933,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 519420028}
-  Parallax: 0.8
+  Parallax: 0.75
 --- !u!212 &358510247
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -970,9 +974,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 15d3184a7e1340c40873146b2b8bab95, type: 3}
-  m_Color: {r: 0.79622644, g: 0, b: 0.56537926, a: 1}
+  m_SortingOrder: 3
+  m_Sprite: {fileID: 21300000, guid: e242c7dab77e6ce4b9a636380243e465, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -991,8 +995,8 @@ Transform:
   m_GameObject: {fileID: 358510245}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.1329288, y: 0.36882257, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 10.0425, y: 0.9186, z: 0}
+  m_LocalScale: {x: 12.046413, y: 12.046413, z: 12.046413}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1433,7 +1437,7 @@ GameObject:
   - component: {fileID: 489553782}
   - component: {fileID: 489553781}
   m_Layer: 0
-  m_Name: NearlyLayer
+  m_Name: layer4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1452,7 +1456,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 519420028}
-  Parallax: 0.7
+  Parallax: 0.6
 --- !u!212 &489553782
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1493,9 +1497,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 33
-  m_Sprite: {fileID: 7482667652216324306, guid: 5dd6097f141d61a49a7af35c7605968f, type: 3}
-  m_Color: {r: 1, g: 0.51886785, b: 0.7921284, a: 1}
+  m_SortingOrder: 4
+  m_Sprite: {fileID: 21300000, guid: 13452696c8f21544d8e3250b5b4465b8, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1514,8 +1518,8 @@ Transform:
   m_GameObject: {fileID: 489553780}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.7329273, y: -0.18117738, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 3.93, y: -0.112, z: 0}
+  m_LocalScale: {x: 10.259179, y: 10.259179, z: 10.259179}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -2061,7 +2065,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4720802887242898087, guid: 5afa70febee157340889996bca132463, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.5
+      value: -3.52
       objectReference: {fileID: 0}
     - target: {fileID: 4720802887242898087, guid: 5afa70febee157340889996bca132463, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2147,6 +2151,22 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: a8267f804284d8c46ace0cf1fe8a15f4, type: 3}
+    - target: {fileID: 5077785766112572640, guid: 5afa70febee157340889996bca132463, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5077785766112572640, guid: 5afa70febee157340889996bca132463, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5077785766112572640, guid: 5afa70febee157340889996bca132463, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5077785766112572640, guid: 5afa70febee157340889996bca132463, type: 3}
+      propertyPath: m_RenderingLayerMask
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8126072382466050127, guid: 5afa70febee157340889996bca132463, type: 3}
       propertyPath: m_FalloffIntensity
       value: 0.54
@@ -18430,7 +18450,7 @@ GameObject:
   - component: {fileID: 1424075507}
   - component: {fileID: 1424075506}
   m_Layer: 0
-  m_Name: FarLayer
+  m_Name: layer2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18449,7 +18469,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 519420028}
-  Parallax: 0.9
+  Parallax: 0.85
 --- !u!212 &1424075507
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -18490,9 +18510,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 9a867fecdea8ad04aa8feeeb9c043371, type: 3}
-  m_Color: {r: 0.4566037, g: 0, b: 0.27890846, a: 1}
+  m_SortingOrder: -1
+  m_Sprite: {fileID: 21300000, guid: 51ecfa82a8ec23047a8202e59353a1fe, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -18511,8 +18531,8 @@ Transform:
   m_GameObject: {fileID: 1424075505}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.65, y: 0.98, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 9.9997, y: -1.0597, z: 0}
+  m_LocalScale: {x: 11.920273, y: 11.920273, z: 11.920273}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -26714,7 +26734,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: f7879d5ceaaf78540b9bcc0a7d762e25, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 00ff85057a769c14bbcf538b098fea91, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -26979,7 +26999,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_TargetDisplay: 0
 --- !u!224 &2099330311
 RectTransform:

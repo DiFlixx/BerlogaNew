@@ -15,8 +15,8 @@ public class LayerMove : MonoBehaviour
 
     void Update()
     {
-        float distX = (cam.transform.position.x * (1 - Parallax));
+        float distX = cam.transform.position.x * (1 - Parallax);
 
-        transform.position = new Vector3(startPosX + distX, transform.position.y, transform.position.z);
+        transform.position = new Vector3(startPosX - distX, transform.position.y, transform.position.z);
     }
 }
