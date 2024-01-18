@@ -16,6 +16,7 @@ TagManager:
   - stick2
   - plank
   - LadderTrigger
+  - Ice
   layers:
   - Default
   - TransparentFX

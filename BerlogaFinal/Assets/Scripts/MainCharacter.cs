@@ -34,13 +34,17 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField]
     private RobotHelper _robot;
-    
+
+    private float _currentSpeed;
     private Animator _animator;
     private Rigidbody2D rb;
     private bool isGrounded;
     private Transform _playerTransform;
     private TemperatureManager _temperatureManager;
+    private ForceMode2D _forceMode = ForceMode2D.Impulse;
+    private int _jumpsLeft = 2;
 
+    private float friction;
     private int _currentChar = 1;
 
     [SerializeField] private AudioSource snowJumpAudio;
@@ -87,7 +91,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        float HorizontalMove = Input.GetAxis("Horizontal") * speed;
+        float HorizontalMove = Input.GetAxis("Horizontal") * _currentSpeed;
         float verticalInput = Input.GetAxis("Vertical");
         float VerticalMove = rb.velocity.y;
         _animator.SetFloat("HorizontalMove", Mathf.Abs(HorizontalMove));
@@ -102,8 +106,9 @@ public class PlayerController : MonoBehaviour
     void Jump()
     {
         var hit = Physics2D.BoxCast(_playerTransform.position, new Vector3(0.6f, 3, 0), 0, Vector2.down, 0.3f, LayerMask.GetMask("Ground"));
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded && hit.collider != null)
+        if (Input.GetKeyDown(KeyCode.Space) && ((isGrounded && hit.collider != null) || _jumpsLeft > 0))
         {
+            _jumpsLeft--;
             rb.velocity = Vector2.up * _jumpForce;
             snowJumpAudio.Play();
         }
@@ -113,7 +118,8 @@ public class PlayerController : MonoBehaviour
     {
         float horizontalInput = Input.GetAxis("Horizontal");
         Vector2 movement = new Vector2(horizontalInput, 0);
-        rb.velocity = new Vector2(movement.x * speed, rb.velocity.y);
+        rb.AddForce(new Vector2(movement.x * _currentSpeed, 0), _forceMode);
+        rb.velocity = new Vector2(rb.velocity.x * friction, rb.velocity.y);
     }
 
     public void SuperJump()
@@ -146,17 +152,20 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.transform.CompareTag("Ground"))
         {
+            _jumpsLeft = 2;
+            _forceMode = ForceMode2D.Impulse;
             isGrounded = true;
+            friction = 0.8f;
+            _currentSpeed = speed;
         }
-    }
-
-    private void OnCollisionStay2D(Collision2D collision)
-    {
-        if (collision.transform.CompareTag("Ground"))
+        else if (collision.transform.CompareTag("Ice"))
         {
+            _jumpsLeft = 2;
+            _forceMode = ForceMode2D.Force;
             isGrounded = true;
+            friction = 0.995f;
+            _currentSpeed = speed * 1;
         }
-
     }
 
     void OnCollisionExit2D(Collision2D collision)
@@ -164,6 +173,14 @@ public class PlayerController : MonoBehaviour
         if (collision.transform.CompareTag("Ground"))
         {
             isGrounded = false;
+            friction = 0.8f;
+        }
+        else if (collision.transform.CompareTag("Ice"))
+        {
+            _forceMode = ForceMode2D.Impulse;
+            isGrounded = false;
+            friction = 0.8f;
+            _currentSpeed = speed;
         }
     }
 
