@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Burst.CompilerServices;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -13,27 +14,12 @@ public class PlayerController : MonoBehaviour
     private float _jumpForce;
     [SerializeField]
     private float _smoothness;
-
     [SerializeField]
     private Camera _camera;
-
-    [SerializeField]
-    private Rigidbody2D _rb1;
-    [SerializeField]
-    private Rigidbody2D _rb2;
-
-    [SerializeField]
-    private Animator _a1;
-    [SerializeField]
-    private Animator _a2;
-
-    [SerializeField]
-    private Transform _t1;
-    [SerializeField]
-    private Transform _t2;
-
     [SerializeField]
     private RobotHelper _robot;
+    [SerializeField]
+    private PlayerController _playerController;
 
     private float _currentSpeed;
     private Animator _animator;
@@ -43,50 +29,54 @@ public class PlayerController : MonoBehaviour
     private TemperatureManager _temperatureManager;
     private ForceMode2D _forceMode = ForceMode2D.Impulse;
     private int _jumpsLeft = 2;
+    private Collider2D _collider;
 
     private float friction;
-    private int _currentChar = 1;
 
     [SerializeField] private AudioSource snowJumpAudio;
 
     void Start()
     {
+        _collider = GetComponent<Collider2D>();
         _temperatureManager = FindAnyObjectByType<TemperatureManager>();
         _animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         _playerTransform = GetComponent<Transform>();
     }
 
+    private void OnEnable()
+    {
+        Start();
+    }
+
+    private void OnDisable()
+    {
+        rb.velocity = new Vector3(0,0);
+    }
+
     private void ChangeCharacter()
     {
         if (Input.GetKeyDown(KeyCode.Tab))
         {
-            if (_currentChar == 1)
-            {
-                _currentChar = 2;
-                rb.velocity = Vector3.zero;
-                rb = _rb2;
-                _animator.SetFloat("HorizontalMove", 0);
-                _animator.SetFloat("VerticalMove", 0);
-                rb.velocity = Vector3.zero;
-                _animator = _a2;
-                _playerTransform = _t2;
-                _robot.ChangePlayer(2);
-            }
-            else
-            {
-                _currentChar = 1;
-                rb.velocity = Vector3.zero;
-                rb = _rb1;
-                rb.velocity = Vector3.zero;
-                _animator.SetFloat("HorizontalMove", 0);
-                _animator.SetFloat("VerticalMove", 0);
-                _animator = _a1;
-                _playerTransform = _t1;
-                _robot.ChangePlayer(1);
-                
-            }
+            Disable();
+            _playerController.Enable();
         }
+    }
+
+    public void Enable()
+    {
+        enabled = true;
+        rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+    }
+
+    public void Disable()
+    {
+        _animator.SetFloat("HorizontalMove", 0f);
+        _animator.SetFloat("VerticalMove", 0f);
+        enabled = false;
+        rb.velocity = new Vector3(0,0);
+        rb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
+        rb.angularVelocity = 0;
     }
 
     void Update()
@@ -136,11 +126,11 @@ public class PlayerController : MonoBehaviour
     private void Flip()
     {
         Vector3 currentScale = _playerTransform.localScale;
-        if (rb.velocity.x < 0)
+        if (rb.velocity.x < 0.1f)
         {
             currentScale.x = -Mathf.Abs(currentScale.x);
         }
-        else if (rb.velocity.x > 0)
+        else if (rb.velocity.x > 0.1f)
         {
             currentScale.x = Mathf.Abs(currentScale.x);
         }
@@ -173,14 +163,10 @@ public class PlayerController : MonoBehaviour
         if (collision.transform.CompareTag("Ground"))
         {
             isGrounded = false;
-            friction = 0.8f;
         }
         else if (collision.transform.CompareTag("Ice"))
         {
-            _forceMode = ForceMode2D.Impulse;
             isGrounded = false;
-            friction = 0.8f;
-            _currentSpeed = speed;
         }
     }
 
