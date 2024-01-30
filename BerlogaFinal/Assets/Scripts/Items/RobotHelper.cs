@@ -13,11 +13,6 @@ public class RobotHelper : Item, ITurnOnable, ITurnOffable
     }
 
     [SerializeField]
-    private GameObject _c1;
-    [SerializeField]
-    private GameObject _c2;
-
-    [SerializeField]
     private float _speed;
     private GameObject _controller;
     [SerializeField]
@@ -31,7 +26,6 @@ public class RobotHelper : Item, ITurnOnable, ITurnOffable
     private Stack<GameObject> _stack;
     private bool _foodFound;
     private Rigidbody2D _rb;
-    private SpriteRenderer _spriteRenderer;
     private Vector2 previousPosition;
 
     public void FindFood()
@@ -108,7 +102,6 @@ public class RobotHelper : Item, ITurnOnable, ITurnOffable
 
     private void Awake()
     {
-        _controller = _c1;
         _state = States.Follow; _currentTarget = _controller.gameObject;
         _stack = new Stack<GameObject>();
         _rb = GetComponent<Rigidbody2D>();
@@ -152,15 +145,9 @@ public class RobotHelper : Item, ITurnOnable, ITurnOffable
         _inventoryUI.gameObject.SetActive(false);
     }
 
-    public void ChangePlayer(int value)
+    public void ChangePlayer(GameObject obj)
     {
-        if (value == 1)
-        {
-            _controller = _c1;
-        }
-        else if (value == 2)
-        {
-            _controller = _c2;
-        }
+        _currentTarget = obj;
+        _controller = obj;
     }
 }

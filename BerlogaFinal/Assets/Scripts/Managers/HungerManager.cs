@@ -12,23 +12,28 @@ public class HungerSystem : MonoBehaviour
     [SerializeField]
     private HealthManager _healthManager;
 
+    private int _currentDecay;
+
     void Start()
     {
+        _currentDecay = hungerDecayRate;
         currentHunger = maxHunger;
         InvokeRepeating("DecayHunger", 8f, 8f);
     }
 
-    void Update()
+    public void Pause()
     {
-        if (currentHunger <= 0)
-        {
+        _currentDecay = 0;
+    }
 
-        }
+    public void UnPause()
+    {
+        _currentDecay = hungerDecayRate;
     }
 
     void DecayHunger()
     {
-        currentHunger -= hungerDecayRate;
+        currentHunger -= _currentDecay;
         currentHunger = Mathf.Clamp(currentHunger, 0, maxHunger);
         _hungerUI.UpdateHungerUI();
 

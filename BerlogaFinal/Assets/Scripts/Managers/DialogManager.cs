@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
 using TMPro;
+using UnityEngine.Events;
 
 public class DialogueManager : MonoBehaviour
 {
     public static DialogueManager Instance;
+    public UnityEvent DialogStarted;
+    public UnityEvent DialogEnded;
 
     public Image characterIcon;
     public TextMeshProUGUI characterName;
@@ -30,6 +33,7 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue(Dialogue dialogue)
     {
+        DialogStarted?.Invoke();
         isDialogueActive = true;
 
         _dialog.SetActive(true);
@@ -68,12 +72,13 @@ public class DialogueManager : MonoBehaviour
         foreach (char letter in dialogueLine.line.ToCharArray())
         {
             dialogueArea.text += letter;
-            yield return new WaitForSeconds(typingSpeed);
+            yield return new WaitForSecondsRealtime(typingSpeed);
         }
     }
 
     void EndDialogue()
     {
+        DialogEnded?.Invoke();
         isDialogueActive = false;
         _dialog.SetActive(false);
     }

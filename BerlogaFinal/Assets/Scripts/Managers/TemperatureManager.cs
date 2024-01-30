@@ -13,15 +13,28 @@ public class TemperatureManager : MonoBehaviour
     [SerializeField]
     private TemperatureUI _temperatureUI;
 
+    private int _currentDecay;
+
     void Start()
     {
+        _currentDecay = temperatureDecayRate;
         currentTemperature = maxTemperature;
         InvokeRepeating("DecayTemperature", 2f, 2f);
     }
 
+    public void Pause()
+    {
+        _currentDecay = 0;
+    }
+
+    public void UnPause()
+    {
+        _currentDecay = temperatureDecayRate;
+    }
+
     void DecayTemperature()
     {
-        currentTemperature -= temperatureDecayRate;
+        currentTemperature -= _currentDecay; ;
         currentTemperature = Mathf.Clamp(currentTemperature, 0, maxTemperature);
         _temperatureUI.UpdateTemperatureUI();
         if (currentTemperature <= 0)

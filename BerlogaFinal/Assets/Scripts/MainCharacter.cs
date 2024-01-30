@@ -9,6 +9,7 @@ using UnityEngine.Serialization;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private float speed;
+    [SerializeField] private float ladderSpeed;
 
     [SerializeField]
     private float _jumpForce;
@@ -20,6 +21,8 @@ public class PlayerController : MonoBehaviour
     private RobotHelper _robot;
     [SerializeField]
     private PlayerController _playerController;
+    [SerializeField]
+    private GameObject _box;
 
     private float _currentSpeed;
     private Animator _animator;
@@ -30,6 +33,9 @@ public class PlayerController : MonoBehaviour
     private ForceMode2D _forceMode = ForceMode2D.Impulse;
     private int _jumpsLeft = 2;
     private Collider2D _collider;
+    private bool _isOnLadder = false;
+    private bool _isNearLadder = false;
+    public bool _isMain;
 
     private float friction;
 
@@ -37,11 +43,13 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+        _isMain = true;
         _collider = GetComponent<Collider2D>();
         _temperatureManager = FindAnyObjectByType<TemperatureManager>();
         _animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         _playerTransform = GetComponent<Transform>();
+        _robot.ChangePlayer(_box);
     }
 
     private void OnEnable()
@@ -59,18 +67,23 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Tab))
         {
             Disable();
+            _isMain = false;
+            _playerController._isMain = true;
             _playerController.Enable();
         }
     }
 
     public void Enable()
     {
+        if (!_isMain) return;
         enabled = true;
+        _robot.ChangePlayer(_box);
         rb.constraints = RigidbodyConstraints2D.FreezeRotation;
     }
 
     public void Disable()
     {
+        if (!_isMain) return;
         _animator.SetFloat("HorizontalMove", 0f);
         _animator.SetFloat("VerticalMove", 0f);
         enabled = false;
@@ -95,9 +108,10 @@ public class PlayerController : MonoBehaviour
 
     void Jump()
     {
-        var hit = Physics2D.BoxCast(_playerTransform.position, new Vector3(0.6f, 3, 0), 0, Vector2.down, 0.3f, LayerMask.GetMask("Ground"));
+        var hit = Physics2D.BoxCast(_playerTransform.position, new Vector3(0.01f, 3, 0), 0, Vector2.down, 0.3f, LayerMask.GetMask("Ground"));
         if (Input.GetKeyDown(KeyCode.Space) && ((isGrounded && hit.collider != null) || _jumpsLeft > 0))
         {
+            rb.gravityScale = 5f;
             _jumpsLeft--;
             rb.velocity = Vector2.up * _jumpForce;
             snowJumpAudio.Play();
@@ -106,9 +120,21 @@ public class PlayerController : MonoBehaviour
 
     private void Move()
     {
+        if (_isNearLadder && (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S)) && !_isOnLadder)
+        {
+            rb.velocity = Vector2.zero;
+            _isOnLadder = true;
+            rb.gravityScale = 0;
+            _currentSpeed = ladderSpeed;
+        }
+        if (_isOnLadder)
+        {
+            float verticalInput = Input.GetAxis("Vertical");
+            rb.position = new Vector2(rb.position.x, rb.position.y + verticalInput * Time.deltaTime * _currentSpeed);
+        }
         float horizontalInput = Input.GetAxis("Horizontal");
-        Vector2 movement = new Vector2(horizontalInput, 0);
-        rb.AddForce(new Vector2(movement.x * _currentSpeed, 0), _forceMode);
+        Vector2 movementX = new Vector2(horizontalInput, 0);
+        rb.AddForce(new Vector2(movementX.x * _currentSpeed, 0), _forceMode);
         rb.velocity = new Vector2(rb.velocity.x * friction, rb.velocity.y);
     }
 
@@ -142,7 +168,8 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.transform.CompareTag("Ground"))
         {
-            _jumpsLeft = 2;
+            var hit = Physics2D.BoxCast(_playerTransform.position, new Vector3(0.01f, 3, 0), 0, Vector2.down, 0.3f, LayerMask.GetMask("Ground"));
+            if (hit) _jumpsLeft = 2;
             _forceMode = ForceMode2D.Impulse;
             isGrounded = true;
             friction = 0.8f;
@@ -150,7 +177,8 @@ public class PlayerController : MonoBehaviour
         }
         else if (collision.transform.CompareTag("Ice"))
         {
-            _jumpsLeft = 2;
+            var hit = Physics2D.BoxCast(_playerTransform.position, new Vector3(0.01f, 3, 0), 0, Vector2.down, 0.3f, LayerMask.GetMask("Ground"));
+            if (hit) _jumpsLeft = 2;
             _forceMode = ForceMode2D.Force;
             isGrounded = true;
             friction = 0.995f;
@@ -176,7 +204,10 @@ public class PlayerController : MonoBehaviour
         {
             _temperatureManager.temperatureDecayRate = -3;
         }
-        
+        if (collision.CompareTag("LadderTrigger"))
+        {
+            _isNearLadder = true;
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -184,6 +215,13 @@ public class PlayerController : MonoBehaviour
         if (collision.CompareTag("HeatArea"))
         {
             _temperatureManager.temperatureDecayRate = 1;
+        }
+        if (collision.CompareTag("LadderTrigger"))
+        {
+            _currentSpeed = speed;
+            rb.gravityScale = 5;
+            _isOnLadder = false;
+            _isNearLadder = false;
         }
     }
 }
