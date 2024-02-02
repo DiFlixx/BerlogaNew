@@ -35,7 +35,7 @@ public class HealthManager : MonoBehaviour
 
     public void Heal(int healAmount)
     {
-        // Добавляем здоровье
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
         _currentHealth += healAmount;
 
        _currentHealth = Mathf.Clamp(_currentHealth, 0, _maxHealth);
