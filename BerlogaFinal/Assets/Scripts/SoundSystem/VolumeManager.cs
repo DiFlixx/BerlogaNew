@@ -9,11 +9,9 @@ public class VolumeManager : MonoBehaviour
     private Slider _slider;
     private AudioMixer _mixer;
     private const float _const = 20f;
-    
+
     private void ChangeVolumeValue(){}
 
     private void SaveVolumeSettings(){}
-
-    private float GetVolumeValue(){}
 }
 
