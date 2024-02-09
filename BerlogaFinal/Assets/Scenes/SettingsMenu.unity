@@ -295,6 +295,7 @@ GameObject:
   m_Component:
   - component: {fileID: 643234588}
   - component: {fileID: 643234589}
+  - component: {fileID: 643234590}
   m_Layer: 5
   m_Name: MusicSlider
   m_TagString: Untagged
@@ -368,13 +369,41 @@ MonoBehaviour:
   m_FillRect: {fileID: 884294586}
   m_HandleRect: {fileID: 1280129770}
   m_Direction: 0
-  m_MinValue: 0
+  m_MinValue: 0.0001
   m_MaxValue: 1
   m_WholeNumbers: 0
   m_Value: 0.5
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &643234590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 643234587}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8462c4e84292e4a4e870aaa2b8840b35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volumeParameter: MenuMusicVol
+  mixer: {fileID: 24100000, guid: 7c3c3ffc5aee6eb4e8a46aa8a074168a, type: 2}
+  slider: {fileID: 643234589}
+  _volumeValue: 0
 --- !u!1 &811984196
 GameObject:
   m_ObjectHideFlags: 0
