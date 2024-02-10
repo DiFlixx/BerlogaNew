@@ -134,11 +134,11 @@ public class PlayerController : MonoBehaviour
         {
             _jumpsLeft = 1;
             float verticalInput = Input.GetAxis("Vertical");
-            rb.position = new Vector2(rb.position.x, rb.position.y + verticalInput * Time.deltaTime * _currentSpeed);
-            /*float horizontalInput = Input.GetAxis("Horizontal");
+            //rb.position = new Vector2(rb.position.x, rb.position.y + verticalInput * Time.deltaTime * _currentSpeed);
+            float horizontalInput = Input.GetAxis("Horizontal");
             Vector2 movement = new Vector2(horizontalInput, verticalInput);
             rb.AddForce(movement * _currentSpeed, _forceMode);
-            rb.velocity = new Vector2(rb.velocity.x * friction, rb.velocity.y * friction);*/
+            rb.velocity = new Vector2(rb.velocity.x * friction, rb.velocity.y * friction);
         }
         else
         {
