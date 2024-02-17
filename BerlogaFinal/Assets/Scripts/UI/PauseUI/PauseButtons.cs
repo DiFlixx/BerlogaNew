@@ -26,6 +26,18 @@ public class PauseButtons : MonoBehaviour
         pausePanels.MainPanelStatus(false);
     }
 
+    public void MoveToSettingsPanel()
+    {
+        pausePanels.MainPanelStatus(false);
+        pausePanels.SettingsPanelStatus(true);
+    }
+
+    public void BackToMainPanel()
+    {
+        pausePanels.SettingsPanelStatus(false);
+        pausePanels.MainPanelStatus(true);
+    }
+
     public void ToExitGame()
     {
         Application.Quit();
