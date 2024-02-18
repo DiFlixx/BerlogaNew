@@ -23,6 +23,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private GameObject _box;
 
+    [SerializeField] AudioSource jumpSound;
+    [SerializeField] AudioSource backGroundMusic;
+
     private Vector2 _prePosition;
     private float _currentSpeed;
     private Animator _animator;
@@ -39,8 +42,11 @@ public class PlayerController : MonoBehaviour
 
     private float friction;
 
-    [SerializeField] private AudioSource snowJumpAudio;
-
+    void Awake()
+    {
+        backGroundMusic.Play();
+    }
+    
     void Start()
     {
         _camera.SetTarget(transform);
@@ -116,7 +122,7 @@ public class PlayerController : MonoBehaviour
             StopClimb();
             _jumpsLeft--;
             rb.velocity = Vector2.up * _jumpForce;
-            snowJumpAudio.Play();
+            jumpSound.Play();
         }
     }
 
