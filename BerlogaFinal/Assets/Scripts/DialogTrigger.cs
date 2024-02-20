@@ -7,6 +7,7 @@ public class DialogueTrigger : MonoBehaviour
 
     public void TriggerDialogue()
     {
+        DialogueManager.Instance.DialogEnded.AddListener(() => Destroy(gameObject));
         DialogueManager.Instance.StartDialogue(dialogue);
     }
 

@@ -1,0 +1,132 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: TileAtlas
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 0
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 0
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_IgnorePlatformSupport: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: b3ce4c20eec887841b9597dc0ffdb501, type: 3}
+    - {fileID: 2800000, guid: 5f89f68dd73b5204fbe15dd93617ec05, type: 3}
+    - {fileID: 2800000, guid: 4f9a3b510e772d54593ab9af661241dd, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+    packedSpriteRenderDataKeys:
+    - b3ce4c20eec887841b9597dc0ffdb501: 1270380211
+    - b3ce4c20eec887841b9597dc0ffdb501: 358422914
+    - b3ce4c20eec887841b9597dc0ffdb501: -345715689
+    - b3ce4c20eec887841b9597dc0ffdb501: -720260428
+    - b3ce4c20eec887841b9597dc0ffdb501: 787727961
+    - b3ce4c20eec887841b9597dc0ffdb501: -838475011
+    - b3ce4c20eec887841b9597dc0ffdb501: -417785103
+    - b3ce4c20eec887841b9597dc0ffdb501: 564854467
+    - b3ce4c20eec887841b9597dc0ffdb501: -737141940
+    - b3ce4c20eec887841b9597dc0ffdb501: 1223812338
+    - b3ce4c20eec887841b9597dc0ffdb501: -1837818719
+    - b3ce4c20eec887841b9597dc0ffdb501: 231943279
+    - b3ce4c20eec887841b9597dc0ffdb501: 1980404169
+    - b3ce4c20eec887841b9597dc0ffdb501: -1686675001
+    - b3ce4c20eec887841b9597dc0ffdb501: -495535532
+    - 4f9a3b510e772d54593ab9af661241dd: -1280003983
+    - 4f9a3b510e772d54593ab9af661241dd: 440931166
+    - 4f9a3b510e772d54593ab9af661241dd: 1278146548
+    - 4f9a3b510e772d54593ab9af661241dd: -1710787181
+    - 4f9a3b510e772d54593ab9af661241dd: 1613948910
+    - 5f89f68dd73b5204fbe15dd93617ec05: -1163259945
+    - 5f89f68dd73b5204fbe15dd93617ec05: 1933669043
+    - 5f89f68dd73b5204fbe15dd93617ec05: -116570301
+    - 5f89f68dd73b5204fbe15dd93617ec05: -627309220
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 1270380211, guid: b3ce4c20eec887841b9597dc0ffdb501, type: 3}
+  - {fileID: 358422914, guid: b3ce4c20eec887841b9597dc0ffdb501, type: 3}
+  - {fileID: -345715689, guid: b3ce4c20eec887841b9597dc0ffdb501, type: 3}
+  - {fileID: -720260428, guid: b3ce4c20eec887841b9597dc0ffdb501, type: 3}
+  - {fileID: 787727961, guid: b3ce4c20eec887841b9597dc0ffdb501, type: 3}
+  - {fileID: -838475011, guid: b3ce4c20eec887841b9597dc0ffdb501, type: 3}
+  - {fileID: -417785103, guid: b3ce4c20eec887841b9597dc0ffdb501, type: 3}
+  - {fileID: 564854467, guid: b3ce4c20eec887841b9597dc0ffdb501, type: 3}
+  - {fileID: -737141940, guid: b3ce4c20eec887841b9597dc0ffdb501, type: 3}
+  - {fileID: 1223812338, guid: b3ce4c20eec887841b9597dc0ffdb501, type: 3}
+  - {fileID: -1837818719, guid: b3ce4c20eec887841b9597dc0ffdb501, type: 3}
+  - {fileID: 231943279, guid: b3ce4c20eec887841b9597dc0ffdb501, type: 3}
+  - {fileID: 1980404169, guid: b3ce4c20eec887841b9597dc0ffdb501, type: 3}
+  - {fileID: -1686675001, guid: b3ce4c20eec887841b9597dc0ffdb501, type: 3}
+  - {fileID: -495535532, guid: b3ce4c20eec887841b9597dc0ffdb501, type: 3}
+  - {fileID: -1280003983, guid: 4f9a3b510e772d54593ab9af661241dd, type: 3}
+  - {fileID: 440931166, guid: 4f9a3b510e772d54593ab9af661241dd, type: 3}
+  - {fileID: 1278146548, guid: 4f9a3b510e772d54593ab9af661241dd, type: 3}
+  - {fileID: -1710787181, guid: 4f9a3b510e772d54593ab9af661241dd, type: 3}
+  - {fileID: 1613948910, guid: 4f9a3b510e772d54593ab9af661241dd, type: 3}
+  - {fileID: -1163259945, guid: 5f89f68dd73b5204fbe15dd93617ec05, type: 3}
+  - {fileID: 1933669043, guid: 5f89f68dd73b5204fbe15dd93617ec05, type: 3}
+  - {fileID: -116570301, guid: 5f89f68dd73b5204fbe15dd93617ec05, type: 3}
+  - {fileID: -627309220, guid: 5f89f68dd73b5204fbe15dd93617ec05, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - Earth_13
+  - Earth_12
+  - Earth_11
+  - Earth_10
+  - Earth_14
+  - Earth_8
+  - Earth_9
+  - Earth_0
+  - Earth_1
+  - Earth_2
+  - Earth_3
+  - Earth_4
+  - Earth_5
+  - Earth_6
+  - Earth_7
+  - Snow_4
+  - Snow_3
+  - Snow_2
+  - Snow_1
+  - Snow_0
+  - Earth_Corner_2
+  - Earth_Corner_3
+  - Earth_Corner_0
+  - Earth_Corner_1
+  m_RenderDataMap: {}
+  m_Tag: TileAtlas
+  m_IsVariant: 0
