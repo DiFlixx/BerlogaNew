@@ -10,7 +10,7 @@ public class Line : MonoBehaviour
     private Star _star1;
     private Star _star2;
     private LineRenderer _lineRenderer;
-    public Action<Star, Star> _lineDestroy;
+    public Action<Star, Star, GameObject> _lineDestroy;
 
     void Start()
     {
@@ -21,7 +21,7 @@ public class Line : MonoBehaviour
         meshCollider.sharedMesh = mesh;
     }
 
-    public void Init(Star star1, Star star2, Action<Star, Star> lineDestroy)
+    public void Init(Star star1, Star star2, Action<Star, Star, GameObject> lineDestroy)
     {
         _lineDestroy = lineDestroy;
         _star1 = star1;
@@ -30,7 +30,6 @@ public class Line : MonoBehaviour
 
     private void OnMouseDown()
     {
-        Destroy(gameObject);
-        _lineDestroy?.Invoke(_star1, _star2);
+        _lineDestroy?.Invoke(_star1, _star2, gameObject);
     }
 }

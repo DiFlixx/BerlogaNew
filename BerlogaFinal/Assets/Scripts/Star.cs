@@ -23,6 +23,16 @@ public class Star : MonoBehaviour
         starManager.HandleBinding(this);
     }
 
+    private void OnMouseOver()
+    {
+        starManager.IsOverStar = true;
+    }
+
+    private void OnMouseExit()
+    {
+        starManager.IsOverStar = false;
+    }
+
     public bool ConnectStars(Star star)
     {
         return ConnectStar(star) && star.ConnectStar(this);

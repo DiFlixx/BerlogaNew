@@ -3,16 +3,23 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class StarManager : MonoBehaviour
 {
-    [SerializeField]
-    private LineRenderer _linePrefab;
+    public bool IsOverStar;
+    
     private bool _isBinding;
     private LineRenderer _line;
     private Star _star;
     private bool _shouldDestroy;
     private HashSet<Star> _starList;
+    private bool _starConnectionCompleted;
+
+    [SerializeField]
+    private LineRenderer _linePrefab;
+    [SerializeField]
+    private UnityEvent _starsConnected;
 
     private void Start()
     {
@@ -21,6 +28,7 @@ public class StarManager : MonoBehaviour
 
     public void HandleBinding(Star star)
     {
+        if (_starConnectionCompleted) return;
         _shouldDestroy = false;
         if (_isBinding)
         {
@@ -50,12 +58,16 @@ public class StarManager : MonoBehaviour
         }
     }
 
-    private void BreakConnection(Star star1, Star star2)
+    private void BreakConnection(Star star1, Star star2, GameObject obj)
     {
-        _starList.Remove(star1);
-        _starList.Remove(star2);
-        star1.BreakConnection(star2);
-        star2.BreakConnection(star1);
+        if (!IsOverStar && !_isBinding && !_starConnectionCompleted)
+        {
+            Destroy(obj);
+            _starList.Remove(star1);
+            _starList.Remove(star2);
+            star1.BreakConnection(star2);
+            star2.BreakConnection(star1);
+        }
     }
 
     private void Check()
@@ -65,7 +77,8 @@ public class StarManager : MonoBehaviour
             if (!star.CheckConnections()) return;
             
         }
-        Debug.Log("Созвездие готово");
+        _starConnectionCompleted = true;
+        _starsConnected?.Invoke();
     } 
 
     void Update()
