@@ -5,11 +5,11 @@ using UnityEngine.UI;
 
 public class SoundManager : MonoBehaviour
 {
-    [SerializeField] AudioSource[] musicSources;
-    [SerializeField] AudioSource[] sfxSources;
+    [SerializeField] private AudioSource[] musicSources;
+    [SerializeField] private AudioSource[] sfxSources;
 
-    [SerializeField] Slider musicSlider;
-    [SerializeField] Slider sfxSlider;
+    [SerializeField] private Slider musicSlider;
+    [SerializeField] private Slider sfxSlider;
 
     public void ChangeMusicVolume()
     {
