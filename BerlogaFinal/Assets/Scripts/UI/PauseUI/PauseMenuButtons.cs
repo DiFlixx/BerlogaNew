@@ -5,7 +5,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class PauseButtons : MonoBehaviour
+public class PauseMenuButtons : MonoBehaviour
 {
     public PausePanels pausePanels;
 
@@ -15,6 +15,8 @@ public class PauseButtons : MonoBehaviour
         {
             Time.timeScale = 0f;
             pausePanels.ShadingStatus(true);
+            pausePanels.MenuChangeButton(true);
+            pausePanels.NotesChangeButton(true);
             pausePanels.MainPanelStatus(true);
         }
     }
@@ -24,6 +26,8 @@ public class PauseButtons : MonoBehaviour
         Time.timeScale = 1f;
         pausePanels.ShadingStatus(false);
         pausePanels.MainPanelStatus(false);
+        pausePanels.MenuChangeButton(false);
+        pausePanels.NotesChangeButton(false);
     }
 
     public void MoveToSettingsPanel()
