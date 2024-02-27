@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -33,20 +34,13 @@ public class StarManager : MonoBehaviour
         if (_isBinding)
         {
             _isBinding = false;
-            if (star.ConnectStars(_star)) 
-            {
-                _line.SetPosition(1, star.transform.position);
-                _starList.Add(star);
-                _starList.Add(_star);
-                Line line = _line.AddComponent<Line>();
-                line.Init(star, _star, BreakConnection);
-                Debug.Log(line._lineDestroy);
-                Check();
-            }
-            else
-            {
-                Destroy(_line.gameObject);
-            }
+            _line.SetPosition(1, star.transform.position);
+            _starList.Add(star);
+            _starList.Add(_star);
+            Line line = _line.AddComponent<Line>();
+            line.Init(star, _star, BreakConnection);
+            Debug.Log(line._lineDestroy);
+            HandleBinding(star);
         }
         else
         {
@@ -70,16 +64,29 @@ public class StarManager : MonoBehaviour
         }
     }
 
-    private void Check()
+    private bool Check()
     {
         foreach(Star star in _starList)
         {
-            if (!star.CheckConnections()) return;
+            if (!star.CheckConnections()) return false;
             
         }
         _starConnectionCompleted = true;
         _starsConnected?.Invoke();
+        return true;
     } 
+
+    private void Restart()
+    {
+        foreach (Star star in _starList)
+        {
+            star.BreakConnections();
+        }
+        foreach (Line line in FindObjectsOfType<Line>())
+        {
+            Destroy(line.gameObject);
+        }
+    }
 
     void Update()
     {
@@ -94,6 +101,10 @@ public class StarManager : MonoBehaviour
             }
             if (Input.GetMouseButtonDown(1))
             {
+                if (!Check())
+                {
+                    Restart();
+                }
                 _shouldDestroy = true;
                 Destroy(_line.gameObject);
                 _isBinding = false;

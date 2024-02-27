@@ -43,6 +43,11 @@ public class Star : MonoBehaviour
         _stars.Remove(star);
     }
 
+    public void BreakConnections()
+    {
+        _stars.Clear();
+    }
+
     private bool ConnectStar(Star star) 
     {
         if (_stars.Contains(star))
