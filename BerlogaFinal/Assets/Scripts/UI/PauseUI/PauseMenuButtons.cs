@@ -34,12 +34,16 @@ public class PauseMenuButtons : MonoBehaviour
     {
         pausePanels.MainPanelStatus(false);
         pausePanels.SettingsPanelStatus(true);
+        pausePanels.NotesChangeButton(false);
+        pausePanels.MenuChangeButton(false);
     }
 
     public void BackToMainPanel()
     {
         pausePanels.SettingsPanelStatus(false);
         pausePanels.MainPanelStatus(true);
+        pausePanels.MenuChangeButton(true);
+        pausePanels.NotesChangeButton(true);
     }
 
     public void ToExitGame()
@@ -49,6 +53,5 @@ public class PauseMenuButtons : MonoBehaviour
 
     public void BackToMenu()
     {
-        
     }
 }
