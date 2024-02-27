@@ -5,6 +5,7 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Rendering;
 
 public class StarManager : MonoBehaviour
 {
@@ -16,7 +17,10 @@ public class StarManager : MonoBehaviour
     private bool _shouldDestroy;
     private HashSet<Star> _starList;
     private bool _starConnectionCompleted;
+    private int _connetionsLeft;
 
+    [SerializeField]
+    private int _starConnectionCount;
     [SerializeField]
     private LineRenderer _linePrefab;
     [SerializeField]
@@ -25,6 +29,7 @@ public class StarManager : MonoBehaviour
     private void Start()
     {
         _starList = new HashSet<Star>();
+        _connetionsLeft = _starConnectionCount;
     }
 
     public void HandleBinding(Star star)
@@ -39,7 +44,11 @@ public class StarManager : MonoBehaviour
             _starList.Add(_star);
             Line line = _line.AddComponent<Line>();
             line.Init(star, _star, BreakConnection);
-            Debug.Log(line._lineDestroy);
+            _connetionsLeft -= 1;
+            if (_connetionsLeft == 0)
+            {
+                Check();
+            }
             HandleBinding(star);
         }
         else
@@ -101,10 +110,6 @@ public class StarManager : MonoBehaviour
             }
             if (Input.GetMouseButtonDown(1))
             {
-                if (!Check())
-                {
-                    Restart();
-                }
                 _shouldDestroy = true;
                 Destroy(_line.gameObject);
                 _isBinding = false;
