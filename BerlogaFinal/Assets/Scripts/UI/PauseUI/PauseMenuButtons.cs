@@ -8,6 +8,7 @@ using UnityEngine.SceneManagement;
 public class PauseMenuButtons : MonoBehaviour
 {
     public PausePanels pausePanels;
+    [SerializeField] private AudioSource buttonSound;
 
     private void Update()
     {
@@ -36,6 +37,8 @@ public class PauseMenuButtons : MonoBehaviour
         pausePanels.SettingsPanelStatus(true);
         pausePanels.NotesChangeButton(false);
         pausePanels.MenuChangeButton(false);
+
+        buttonSound.Play();
     }
 
     public void BackToMainPanel()
@@ -44,6 +47,8 @@ public class PauseMenuButtons : MonoBehaviour
         pausePanels.MainPanelStatus(true);
         pausePanels.MenuChangeButton(true);
         pausePanels.NotesChangeButton(true);
+
+        buttonSound.Play();
     }
 
     public void ToExitGame()

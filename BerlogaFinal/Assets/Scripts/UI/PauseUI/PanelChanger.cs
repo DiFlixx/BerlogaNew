@@ -6,14 +6,19 @@ using UnityEngine;
 public class PanelChanger : MonoBehaviour
 {
     [SerializeField] private PausePanels pausePanels;
+    [SerializeField] AudioSource buttonSound;
 
     public void GoToNotesPanel()
     {
+
+
         pausePanels.MainPanelStatus(false);
         //pausePanels.GuidePanelStatus(false); потом добавить
         //pausePanels.MapPanelStatus(false); потом добавить
 
         pausePanels.NotesPanelStatus(true);
+
+        buttonSound.Play();
     }
 
     public void GoToMenuPanel()
@@ -23,5 +28,7 @@ public class PanelChanger : MonoBehaviour
         //pausePanels.MapPanelStatus(false); потом добавить
 
         pausePanels.MainPanelStatus(true);
+
+        buttonSound.Play();
     }
 }
