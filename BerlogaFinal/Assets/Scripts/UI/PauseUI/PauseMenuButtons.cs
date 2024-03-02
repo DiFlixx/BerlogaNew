@@ -1,13 +1,9 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class PauseMenuButtons : MonoBehaviour
 {
-    public PausePanels pausePanels;
+    public PausePanelController pausePanelController;
+    [SerializeField] private GameObject _shading;
     [SerializeField] private AudioSource buttonSound;
 
     private void Update()
@@ -15,39 +11,27 @@ public class PauseMenuButtons : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape)) 
         {
             Time.timeScale = 0f;
-            pausePanels.ShadingStatus(true);
-            pausePanels.MenuChangeButton(true);
-            pausePanels.NotesChangeButton(true);
-            pausePanels.MainPanelStatus(true);
+            _shading.SetActive(true);
+            pausePanelController.ActivatePanel(0);
         }
     }
 
     public void ToContinueGame()
     {
         Time.timeScale = 1f;
-        pausePanels.ShadingStatus(false);
-        pausePanels.MainPanelStatus(false);
-        pausePanels.MenuChangeButton(false);
-        pausePanels.NotesChangeButton(false);
+        _shading.SetActive(false);
+        pausePanelController.HideMenuPanel();
     }
 
     public void MoveToSettingsPanel()
     {
-        pausePanels.MainPanelStatus(false);
-        pausePanels.SettingsPanelStatus(true);
-        pausePanels.NotesChangeButton(false);
-        pausePanels.MenuChangeButton(false);
-
+        pausePanelController.ActivatePanel(1);
         buttonSound.Play();
     }
 
     public void BackToMainPanel()
     {
-        pausePanels.SettingsPanelStatus(false);
-        pausePanels.MainPanelStatus(true);
-        pausePanels.MenuChangeButton(true);
-        pausePanels.NotesChangeButton(true);
-
+        pausePanelController.ActivatePanel(0);
         buttonSound.Play();
     }
 
