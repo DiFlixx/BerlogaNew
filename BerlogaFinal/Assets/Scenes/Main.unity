@@ -30020,7 +30020,7 @@ PrefabInstance:
       objectReference: {fileID: 139984932}
     - target: {fileID: 6939835386092458234, guid: 946273b5b286bd74dbc2394dab516441, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: BackToMenu
+      value: BackToMainPanel
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
