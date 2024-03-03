@@ -1,19 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class ButtonColorController : MonoBehaviour
 {
-    private Button _button;
-
+    // Start is called before the first frame update
     void Start()
     {
-        _button = GetComponent<Button>();
+        
     }
 
-    void OnMouseDown()
+    // Update is called once per frame
+    void Update()
     {
+        
     }
 }
