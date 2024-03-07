@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -108,7 +108,70 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: 2xxTrees back_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 5852
+        height: 2224
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e5153adb97d047428e4922152b1796e
+      internalID: 87803142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2xxTrees back_1
+      rect:
+        serializedVersion: 2
+        x: 6546
+        y: 0
+        width: 11191
+        height: 2224
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d875441911e9d645a85b4ef91d541ff
+      internalID: 1264537521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2xxTrees back_2
+      rect:
+        serializedVersion: 2
+        x: 18018
+        y: 0
+        width: 2828
+        height: 2224
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4964f7bef8d5ec1418c08440fa8d021a
+      internalID: -260996385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -119,7 +182,12 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      2xxTrees back_0: 87803142
+      2xxTrees back_1: 1264537521
+      2xxTrees back_2: -260996385
+      2xxTrees back_3: -81282333
+      2xxTrees back_4: -302636970
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
