@@ -16,9 +16,12 @@ public class StarManager : MonoBehaviour
     private Star _star;
     private bool _shouldDestroy;
     private HashSet<Star> _starList;
-    private bool _starConnectionCompleted;
     private int _connetionsLeft;
 
+    [SerializeField]
+    private Transform _lineParent;
+    [SerializeField]
+    private TextMeshProUGUI _text;
     [SerializeField]
     private int _starConnectionCount;
     [SerializeField]
@@ -34,36 +37,46 @@ public class StarManager : MonoBehaviour
 
     public void HandleBinding(Star star)
     {
-        if (_starConnectionCompleted) return;
+        if (ConnectionsCompleted()) return;
         _shouldDestroy = false;
         if (_isBinding)
         {
-            _isBinding = false;
             _line.SetPosition(1, star.transform.position);
             _starList.Add(star);
+            _isBinding = false;
             _starList.Add(_star);
-            Line line = _line.AddComponent<Line>();
-            line.Init(star, _star, BreakConnection);
             _connetionsLeft -= 1;
-            if (_connetionsLeft == 0)
+            _star.ConnectStars(star);
+            if (ConnectionsCompleted())
             {
-                Check();
+                if (Check())
+                {
+                    _starsConnected?.Invoke();
+                }
+                else
+                {
+                    Restart();
+                }
             }
-            HandleBinding(star);
+            else
+            {
+                HandleBinding(star);
+            }
         }
         else
         {
             _isBinding = true;
-            LineRenderer line = Instantiate(_linePrefab);
+            LineRenderer line = Instantiate(_linePrefab, _lineParent);
             line.SetPosition(0, star.transform.position);
             _line = line;
             _star = star;
         }
+        _text.text = "Connections left:" + _connetionsLeft;
     }
 
     private void BreakConnection(Star star1, Star star2, GameObject obj)
     {
-        if (!IsOverStar && !_isBinding && !_starConnectionCompleted)
+        if (!IsOverStar && !_isBinding && !ConnectionsCompleted())
         {
             Destroy(obj);
             _starList.Remove(star1);
@@ -73,28 +86,32 @@ public class StarManager : MonoBehaviour
         }
     }
 
+    private bool ConnectionsCompleted()
+    {
+        return _connetionsLeft <= 0;
+    }
+
     private bool Check()
     {
-        foreach(Star star in _starList)
+        foreach (Star star in _starList)
         {
             if (!star.CheckConnections()) return false;
-            
         }
-        _starConnectionCompleted = true;
-        _starsConnected?.Invoke();
         return true;
     } 
 
     private void Restart()
     {
+        _connetionsLeft = _starConnectionCount;
         foreach (Star star in _starList)
         {
             star.BreakConnections();
         }
-        foreach (Line line in FindObjectsOfType<Line>())
+        foreach (Transform line in _lineParent)
         {
             Destroy(line.gameObject);
         }
+        _text.text = "Connections left:" + _connetionsLeft;
     }
 
     void Update()
@@ -111,8 +128,8 @@ public class StarManager : MonoBehaviour
             if (Input.GetMouseButtonDown(1))
             {
                 _shouldDestroy = true;
-                Destroy(_line.gameObject);
                 _isBinding = false;
+                Restart();
             }
         }
     }
