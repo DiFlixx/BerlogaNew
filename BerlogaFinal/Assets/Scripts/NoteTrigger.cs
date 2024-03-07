@@ -1,7 +1,6 @@
-using Unity.VisualScripting;
 using UnityEngine;
 
-public class TextScript : MonoBehaviour
+public class NoteTrigger : MonoBehaviour
 {
 	[SerializeField] private GameObject _button;
 

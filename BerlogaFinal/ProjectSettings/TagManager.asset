@@ -18,6 +18,8 @@ TagManager:
   - LadderTrigger
   - Ice
   - Audio
+  - SFX
+  - Music
   layers:
   - Default
   - TransparentFX

@@ -351,7 +351,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 2bec0a312bab62f44af0a256683530b8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c36ab29ba352cc044835fdf4061b15e2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -560,15 +560,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0.25874916, b: 0.5283019, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 13a07606f4765a64492424f99da816c8, type: 3}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 3946ca8b4d603f345ba2e5da67fd6747, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -896,7 +896,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2771583034719185419
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1231,7 +1231,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 2bec0a312bab62f44af0a256683530b8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c7bb99eb2669287498163320c426154e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2184,7 +2184,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 2bec0a312bab62f44af0a256683530b8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b24ce8728464b3e4a994bd7a6f571233, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2395,7 +2395,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -395.242, y: -108.74426}
+  m_AnchoredPosition: {x: -496, y: -108.74426}
   m_SizeDelta: {x: 884.4839, y: 117.4885}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &6971843015142620977
@@ -2411,15 +2411,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
-    m_Left: 0
+    m_Left: -135
     m_Right: 0
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 4
   m_StartCorner: 0
   m_StartAxis: 0
-  m_CellSize: {x: 120, y: 120}
-  m_Spacing: {x: 50, y: 50}
+  m_CellSize: {x: 190.1, y: 151.6}
+  m_Spacing: {x: 16.4, y: 50}
   m_Constraint: 0
   m_ConstraintCount: 2
 --- !u!1 &8682267511082999413
@@ -2615,7 +2615,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 2bec0a312bab62f44af0a256683530b8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9fdd86bc69aac3d46b43a63fd62a6f9f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
