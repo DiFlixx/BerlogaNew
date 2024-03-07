@@ -63,6 +63,11 @@ public class Star : MonoBehaviour
 
     public bool CheckConnections()
     {
+        Debug.Log(_stars.SetEquals(_rightStarsSet) + " " + name + " " + _stars.Count);
+        foreach (Star star in _stars)
+        {
+            Debug.Log(star.name);
+        }
         return _stars.SetEquals(_rightStarsSet);
     }
 }
