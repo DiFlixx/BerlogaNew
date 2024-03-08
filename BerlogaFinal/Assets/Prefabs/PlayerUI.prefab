@@ -1456,6 +1456,7 @@ GameObject:
   - component: {fileID: 1644895921567495618}
   - component: {fileID: 1934191769076387560}
   - component: {fileID: 275446874380851748}
+  - component: {fileID: 3621868826876210356}
   m_Layer: 5
   m_Name: PlayerUI
   m_TagString: Untagged
@@ -1622,6 +1623,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &3621868826876210356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5038313561556506047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07f44f45efc2ca541979c9e6835abda4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaleIcon: {fileID: 581206592644264418}
+  FemaleIcon: {fileID: 1683210015451788749}
+  MaleCharacter: {fileID: 0}
+  FemaleCharacter: {fileID: 0}
 --- !u!1 &5635817437680145536
 GameObject:
   m_ObjectHideFlags: 0
@@ -2583,7 +2600,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -496, y: -108.74426}
+  m_AnchoredPosition: {x: -395.2422, y: -108.74414}
   m_SizeDelta: {x: 884.4839, y: 117.4885}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &6971843015142620977

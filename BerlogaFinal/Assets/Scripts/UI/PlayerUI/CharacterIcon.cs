@@ -1,14 +1,21 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CharacterIcon : MonoBehaviour
 {
-    private GameObject _icon;
-    private GameObject _player;
+    [SerializeField] private GameObject MaleIcon, FemaleIcon;
+    [SerializeField] PlayerController MaleCharacter, FemaleCharacter;
     
     void Update()
     {
-        
+        if (MaleCharacter._isMain)
+        {
+            MaleIcon.SetActive(true);
+            FemaleIcon.SetActive(false);
+        }
+        else
+        {
+            MaleIcon.SetActive(false);
+            FemaleIcon.SetActive(true);
+        }
     }
 }
