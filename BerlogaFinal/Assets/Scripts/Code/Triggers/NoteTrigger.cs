@@ -9,6 +9,7 @@ public class NoteTrigger : MonoBehaviour
 		if (other.gameObject.name == "MainCharacter2")
 		{
 			_button.SetActive(true);
+			Destroy(gameObject);
 		}
 	}
 }
