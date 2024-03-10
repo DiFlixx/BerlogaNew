@@ -165,13 +165,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0
-  climbSpeed: 0
+  ladderSpeed: 0
   _jumpForce: 20
-  _smoothness: 7
   _camera: {fileID: 0}
-  extraJumpsValue: 111
-  snowJumpAudio: {fileID: 0}
-  doubleJumpAudio: {fileID: 0}
+  _robot: {fileID: 0}
+  _playerController: {fileID: 0}
+  _box: {fileID: 0}
+  jumpSound: {fileID: 0}
+  backGroundMusic: {fileID: 0}
+  _isMain: 0
 --- !u!95 &2088627773463244339
 Animator:
   serializedVersion: 5
