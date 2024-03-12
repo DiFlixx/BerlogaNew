@@ -20,11 +20,8 @@ public class Slot : MonoBehaviour
     {
         foreach (Transform child in transform)
         {
-            if (!child.CompareTag("Cross"))
-            {
-                GameObject.Destroy(child.gameObject);
-                IsFull = false;
-            }
+            GameObject.Destroy(child.gameObject);
+            IsFull = false;
         }
     }
 
