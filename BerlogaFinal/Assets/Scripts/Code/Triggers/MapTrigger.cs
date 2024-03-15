@@ -6,16 +6,30 @@ public class MapTrigger : MonoBehaviour
 
     [SerializeField] private Maps _maps;
 
-    private void OnTriggerStay2D(Collider2D other)
-    {
-        if (other.gameObject.CompareTag("Player"))
-        {
+    private bool _entered;
 
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                _maps.mapsOnUI[index].SetActive(true);
-                Destroy(gameObject);
-            }
+    private void Update()
+    {
+        if (_entered && Input.GetKeyDown(KeyCode.E))
+        {
+            _maps.mapsOnUI[index].SetActive(true);
+            Destroy(gameObject);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            _entered = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            _entered = false;
         }
     }
 }

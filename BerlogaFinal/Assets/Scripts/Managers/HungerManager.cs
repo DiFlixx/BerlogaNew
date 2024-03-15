@@ -18,7 +18,7 @@ public class HungerSystem : MonoBehaviour
     {
         _currentDecay = hungerDecayRate;
         currentHunger = maxHunger;
-        InvokeRepeating("DecayHunger", 8f, 8f);
+        InvokeRepeating("DecayHunger", 60f, 60f);
     }
 
     public void Pause()

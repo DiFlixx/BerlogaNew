@@ -18,7 +18,7 @@ public abstract class Pickup : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.TryGetComponent<RobotHelper>(out var robot))
+        /*if (collision.TryGetComponent<RobotHelper>(out var robot))
         {
             for (int i = 0; i < _inventory.slots.Length; i++)
             {
@@ -32,7 +32,7 @@ public abstract class Pickup : MonoBehaviour
                 }
             }
         }
-        else if (collision.CompareTag("Player"))
+        else*/ if (collision.CompareTag("Player"))
         {
             for (int i = 0; i < _inventory.slots.Length; i++)
             {

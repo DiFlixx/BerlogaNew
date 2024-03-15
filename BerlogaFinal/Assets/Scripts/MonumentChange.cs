@@ -9,9 +9,12 @@ public class MonumentChange : MonoBehaviour
 
     static int index = 0;
 
-    void OnTriggerStay2D(Collider2D box)
+
+    private bool _entered;
+
+    private void Update()
     {
-        if (box.CompareTag("Player"))
+        if (_entered)
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
@@ -21,6 +24,22 @@ public class MonumentChange : MonoBehaviour
             {
                 MoveLeft();
             }
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            _entered = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            _entered = false;
         }
     }
 
