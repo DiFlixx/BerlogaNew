@@ -3967,6 +3967,7 @@ GameObject:
   - component: {fileID: 386720178}
   - component: {fileID: 386720177}
   - component: {fileID: 386720176}
+  - component: {fileID: 386720179}
   m_Layer: 5
   m_Name: MapButton
   m_TagString: Untagged
@@ -4015,10 +4016,10 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 0}
+    m_NormalColor: {r: 0.5176471, g: 0.011764706, b: 0.5921569, a: 0}
     m_HighlightedColor: {r: 0.5176471, g: 0.011764706, b: 0.5921569, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.42745098, g: 0.13333334, b: 0.43529412, a: 1}
+    m_SelectedColor: {r: 0.5176471, g: 0.011764706, b: 0.5921569, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -4046,6 +4047,18 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 4
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 386720179}
+        m_TargetAssemblyTypeName: ButtonColorController, Assembly-CSharp
+        m_MethodName: MakeHeadButtonIsMain
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -4088,6 +4101,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 386720174}
   m_CullTransparentMesh: 1
+--- !u!114 &386720179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 386720174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6895f5688c8e9cf48b3a2f5a18b508e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isMenuButton: 0
 --- !u!1 &390023225
 GameObject:
   m_ObjectHideFlags: 0
@@ -5506,7 +5532,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 87.2, y: -0.3, z: -10}
+  m_LocalPosition: {x: 12.6, y: -0.3, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -27070,11 +27096,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4720802887242898087, guid: 5afa70febee157340889996bca132463, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 125.62
+      value: 12.318
       objectReference: {fileID: 0}
     - target: {fileID: 4720802887242898087, guid: 5afa70febee157340889996bca132463, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.57
+      value: -3.385
       objectReference: {fileID: 0}
     - target: {fileID: 4720802887242898087, guid: 5afa70febee157340889996bca132463, type: 3}
       propertyPath: m_LocalPosition.z
@@ -29713,6 +29739,7 @@ GameObject:
   - component: {fileID: 1051341709}
   - component: {fileID: 1051341708}
   - component: {fileID: 1051341707}
+  - component: {fileID: 1051341710}
   m_Layer: 5
   m_Name: notesButton
   m_TagString: Untagged
@@ -29761,10 +29788,10 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 0}
+    m_NormalColor: {r: 0.5176471, g: 0.011764706, b: 0.5921569, a: 0}
     m_HighlightedColor: {r: 0.5176471, g: 0.011764706, b: 0.5921569, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.42745098, g: 0.13333334, b: 0.43529412, a: 1}
+    m_SelectedColor: {r: 0.5176471, g: 0.011764706, b: 0.5921569, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -29784,6 +29811,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1051341710}
+        m_TargetAssemblyTypeName: ButtonColorController, Assembly-CSharp
+        m_MethodName: MakeHeadButtonIsMain
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 139984934}
         m_TargetAssemblyTypeName: PanelChanger, Assembly-CSharp
         m_MethodName: ChangePanel
@@ -29834,6 +29873,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1051341705}
   m_CullTransparentMesh: 1
+--- !u!114 &1051341710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1051341705}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6895f5688c8e9cf48b3a2f5a18b508e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isMenuButton: 0
 --- !u!1 &1051946507
 GameObject:
   m_ObjectHideFlags: 0
@@ -31633,9 +31685,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.012082798}
   serializedVersion: 2
-  m_Radius: 0.49999997
+  m_Radius: 0.48791716
 --- !u!70 &1150063146
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -31668,8 +31720,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.4169003, y: 0.9247183}
+  m_Offset: {x: 0, y: 0.018935034}
+  m_Size: {x: 0.41690013, y: 0.9031243}
   m_Direction: 0
 --- !u!95 &1150063148 stripped
 Animator:
@@ -34630,6 +34682,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2088627773463244339, guid: 5afa70febee157340889996bca132463, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 0c1eda2de2eb3fb4597bbe1d5d21bdbd, type: 2}
     - target: {fileID: 2214204875370204040, guid: 5afa70febee157340889996bca132463, type: 3}
       propertyPath: m_Mass
       value: 5
@@ -34648,19 +34704,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4720802887242898087, guid: 5afa70febee157340889996bca132463, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.5
+      value: 1.7499086
       objectReference: {fileID: 0}
     - target: {fileID: 4720802887242898087, guid: 5afa70febee157340889996bca132463, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.5
+      value: 1.7499086
+      objectReference: {fileID: 0}
+    - target: {fileID: 4720802887242898087, guid: 5afa70febee157340889996bca132463, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.1666057
       objectReference: {fileID: 0}
     - target: {fileID: 4720802887242898087, guid: 5afa70febee157340889996bca132463, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.2
+      value: 11.17
       objectReference: {fileID: 0}
     - target: {fileID: 4720802887242898087, guid: 5afa70febee157340889996bca132463, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.5
+      value: -3.366
       objectReference: {fileID: 0}
     - target: {fileID: 4720802887242898087, guid: 5afa70febee157340889996bca132463, type: 3}
       propertyPath: m_LocalPosition.z
@@ -34765,7 +34825,7 @@ PrefabInstance:
     - target: {fileID: 5077785766112572640, guid: 5afa70febee157340889996bca132463, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: a8267f804284d8c46ace0cf1fe8a15f4, type: 3}
+      objectReference: {fileID: 21300000, guid: e9bb4402f3f703b42853d4c4b1c2d2ea, type: 3}
     - target: {fileID: 5077785766112572640, guid: 5afa70febee157340889996bca132463, type: 3}
       propertyPath: m_SortingLayer
       value: 1
@@ -39036,6 +39096,7 @@ GameObject:
   - component: {fileID: 1745595496}
   - component: {fileID: 1745595495}
   - component: {fileID: 1745595494}
+  - component: {fileID: 1745595497}
   m_Layer: 5
   m_Name: guideButton
   m_TagString: Untagged
@@ -39084,10 +39145,10 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 0}
+    m_NormalColor: {r: 0.5176471, g: 0.011764706, b: 0.5921569, a: 0}
     m_HighlightedColor: {r: 0.5176471, g: 0.011764706, b: 0.5921569, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.42745098, g: 0.13333334, b: 0.43529412, a: 1}
+    m_SelectedColor: {r: 0.5176471, g: 0.011764706, b: 0.5921569, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -39115,6 +39176,18 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1745595497}
+        m_TargetAssemblyTypeName: ButtonColorController, Assembly-CSharp
+        m_MethodName: MakeHeadButtonIsMain
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -39157,6 +39230,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1745595492}
   m_CullTransparentMesh: 1
+--- !u!114 &1745595497
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1745595492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6895f5688c8e9cf48b3a2f5a18b508e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isMenuButton: 0
 --- !u!1 &1749513808
 GameObject:
   m_ObjectHideFlags: 0
@@ -42797,6 +42883,7 @@ GameObject:
   - component: {fileID: 2108667796}
   - component: {fileID: 2108667795}
   - component: {fileID: 2108667794}
+  - component: {fileID: 2108667797}
   m_Layer: 5
   m_Name: menuButton
   m_TagString: Untagged
@@ -42845,10 +42932,10 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 0}
+    m_NormalColor: {r: 0.5176471, g: 0.011764706, b: 0.5921569, a: 0}
     m_HighlightedColor: {r: 0.5176471, g: 0.011764706, b: 0.5921569, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.42745098, g: 0.13333334, b: 0.43529412, a: 1}
+    m_SelectedColor: {r: 0.5176471, g: 0.011764706, b: 0.5921569, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -42872,6 +42959,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: PanelChanger, Assembly-CSharp
         m_MethodName: ChangePanel
         m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2108667797}
+        m_TargetAssemblyTypeName: ButtonColorController, Assembly-CSharp
+        m_MethodName: MakeHeadButtonIsMain
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -42918,6 +43017,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2108667792}
   m_CullTransparentMesh: 1
+--- !u!114 &2108667797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2108667792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6895f5688c8e9cf48b3a2f5a18b508e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isMenuButton: 1
 --- !u!1 &2111689052
 GameObject:
   m_ObjectHideFlags: 0

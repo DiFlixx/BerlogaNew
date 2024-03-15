@@ -1,28 +1,32 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class ButtonColorController : MonoBehaviour
 {
-    [SerializeField] private Button[] headButtons;
-
-    private Button _menuButton;
-    private Button _settingsButton;
-    private Button _guideButton;
-    private Button _mapButton;
-
+    private Button _button;
+    private ColorBlock _theColor;
+    
+    public bool isMenuButton;
+    
     void Start()
     {
-        _menuButton = headButtons[0].GetComponent<Button>();
-        _settingsButton = headButtons[1].GetComponent<Button>();
-        _guideButton = headButtons[2].GetComponent<Button>();
-        _mapButton = headButtons[3].GetComponent<Button>();
+        GettingComponent();
+    }
+    
+    private void GettingComponent()
+    {
+        _button = GetComponent<Button>();
+        _theColor = _button.GetComponent<Button>().colors;
     }
 
-    private int MakeNormalColor()
+    public void MakeHeadButtonIsMain()
     {
-        return 0;
+        _theColor.normalColor = new Color(132, 3, 151, 255);
+        _button.colors = _theColor;
     }
+
+    /*public void MakeHeadButtonIsUsual()
+    {
+        _button.colors = _defaultColorParameters;
+    }*/
 }
