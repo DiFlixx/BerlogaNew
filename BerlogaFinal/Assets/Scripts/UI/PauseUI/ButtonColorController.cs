@@ -5,12 +5,23 @@ public class ButtonColorController : MonoBehaviour
 {
     private Button _button;
     private ColorBlock _theColor;
+    private static Button _currentMainButton;
+
     
     public bool isMenuButton;
     
     void Start()
     {
-        GettingComponent();
+        if (isMenuButton)
+        {
+            _currentMainButton = _button;
+            GettingComponent();
+            MakeHeadButtonIsMain();
+        }
+        else
+        {
+            GettingComponent();
+        }
     }
     
     private void GettingComponent()
@@ -21,12 +32,15 @@ public class ButtonColorController : MonoBehaviour
 
     public void MakeHeadButtonIsMain()
     {
-        _theColor.normalColor = new Color(132, 3, 151, 255);
+        MakeHeadButtonIsUsual();
+        _theColor.normalColor = new Color32(93, 15, 95, 255);
         _button.colors = _theColor;
+        _currentMainButton = _button;
     }
 
-    /*public void MakeHeadButtonIsUsual()
+    public void MakeHeadButtonIsUsual()
     {
-        _button.colors = _defaultColorParameters;
-    }*/
+        _theColor.normalColor = new Color32(93, 15, 95, 0);
+        _currentMainButton.colors = _theColor;
+    }
 }

@@ -4113,6 +4113,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6895f5688c8e9cf48b3a2f5a18b508e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _theColor: {r: 0.5176471, g: 0.011764706, b: 0.5921569, a: 1}
   isMenuButton: 0
 --- !u!1 &390023225
 GameObject:
@@ -29885,6 +29886,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6895f5688c8e9cf48b3a2f5a18b508e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _theColor: {r: 0.5176471, g: 0.011764706, b: 0.5921569, a: 1}
   isMenuButton: 0
 --- !u!1 &1051946507
 GameObject:
@@ -39242,6 +39244,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6895f5688c8e9cf48b3a2f5a18b508e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _theColor: {r: 0.5176471, g: 0.011764706, b: 0.5921569, a: 1}
   isMenuButton: 0
 --- !u!1 &1749513808
 GameObject:
@@ -43029,6 +43032,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6895f5688c8e9cf48b3a2f5a18b508e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _theColor: {r: 0.5176471, g: 0.011764706, b: 0.5921569, a: 1}
   isMenuButton: 1
 --- !u!1 &2111689052
 GameObject:

@@ -1,12 +1,17 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ColorChanger : MonoBehaviour
 {
     private ButtonColorController _buttonColorController;
 
-    private GameObject[] _headButtons;
-    
-    
+    [SerializeField] private Button[] _headButtons;
+
+    private void NormalizeAllButtons(Button[] buttons)
+    {
+        foreach (var button in buttons)
+        {
+            _buttonColorController.MakeHeadButtonIsUsual();
+        }
+    }
 }
