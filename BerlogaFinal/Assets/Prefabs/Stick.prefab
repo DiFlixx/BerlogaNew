@@ -233,10 +233,10 @@ CircleCollider2D:
   m_LayerOverridePriority: 1
   m_ForceSendLayers:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 33591
   m_ForceReceiveLayers:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 33591
   m_ContactCaptureLayers:
     serializedVersion: 2
     m_Bits: 4294967295

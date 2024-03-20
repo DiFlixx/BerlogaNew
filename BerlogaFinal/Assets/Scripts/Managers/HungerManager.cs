@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class HungerSystem : MonoBehaviour
 {
-    public int maxHunger = 6;
+    public int maxHunger = 7;
     public int currentHunger;
 
     [SerializeField]
@@ -18,7 +18,7 @@ public class HungerSystem : MonoBehaviour
     {
         _currentDecay = hungerDecayRate;
         currentHunger = maxHunger;
-        InvokeRepeating("DecayHunger", 60f, 60f);
+        InvokeRepeating("DecayHunger", 5f, 5f);
     }
 
     public void Pause()
@@ -33,14 +33,15 @@ public class HungerSystem : MonoBehaviour
 
     void DecayHunger()
     {
-        currentHunger -= _currentDecay;
-        currentHunger = Mathf.Clamp(currentHunger, 0, maxHunger);
-        _hungerUI.UpdateHungerUI();
-
         if (currentHunger <= 0)
         {
             _healthManager.TakeDamage(1);
+            return;
         }
+
+        currentHunger -= _currentDecay;
+        currentHunger = Mathf.Clamp(currentHunger, 0, maxHunger);
+        _hungerUI.UpdateHungerUI();
     }
 
     public void Eat(int amount)

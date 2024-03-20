@@ -7,37 +7,18 @@ public class HealthBar : MonoBehaviour
     private HealthManager healthManager;
 
     [SerializeField]
-    private Image[] hearts;
-
-    [SerializeField]
-    private Sprite fullHeartSprite;
-    [SerializeField]
-    private Sprite halfHeartSprite;
-    [SerializeField]
-    private Sprite emptyHeartSprite;
+    private GameObject[] hearts;
 
     public void UpdateHealthUI()
     {
         int health = healthManager.GetHealth();
 
 
-        for (int i = 0; i < hearts.Length; i++)
+        if (health != hearts.Length - 1)
         {
-            int heartType = Mathf.Clamp(health - i * 2, 0, 2);
-
-            switch (heartType)
-            {
-                case 0:
-                    hearts[i].sprite = emptyHeartSprite;
-                    break;
-                case 1:
-                    hearts[i].sprite = halfHeartSprite;
-                    break;
-                case 2:
-                    hearts[i].sprite = fullHeartSprite;
-                    break;
-            }
+            hearts[health + 1].SetActive(false);
         }
+        hearts[health].SetActive(true);
     }
 
     void Start()
