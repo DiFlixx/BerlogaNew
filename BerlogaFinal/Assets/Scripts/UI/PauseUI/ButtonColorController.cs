@@ -1,17 +1,15 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class ButtonColorController : MonoBehaviour
 {
+    [SerializeField] private ColorChanger colorChanger;
+    
     private Button _button;
     private ColorBlock _theColor;
-    private static Button _currentMainButton;
 
     public bool isMenuButton;
-
-    void Update()
-    {
-    }
 
     void Start()
     {
@@ -35,15 +33,8 @@ public class ButtonColorController : MonoBehaviour
 
     public void MakeHeadButtonIsMain()
     {
-        //MakeHeadButtonIsUsual();       
+        colorChanger.MakeAllButtonsIsUsual();
         _theColor.normalColor = new Color32(93, 15, 95, 255);
         _button.colors = _theColor;
-        _currentMainButton = _button;
-    }
-
-    public void MakeHeadButtonIsUsual()
-    {
-        _theColor.normalColor = new Color32(93, 15, 95, 0);
-        _currentMainButton.colors = _theColor;
     }
 }
