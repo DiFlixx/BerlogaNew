@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e71871abe9f4f44478b1120b58ffae22
+guid: 229650d32cb9aaa4ea5dddaa0188cf46
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Klusha_climbing_0
+      name: Oluh climbing_0
       rect:
         serializedVersion: 2
         x: 0
         y: 100
-        width: 39
-        height: 88
+        width: 59
+        height: 90
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,19 +124,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 17e9a6a4f7bae174684ae87eb7fb3cf7
-      internalID: -1841675689
+      spriteID: 7a3128a11b421e94282bf680c4b48fb4
+      internalID: 1143038732
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Klusha_climbing_1
+      name: Oluh climbing_1
       rect:
         serializedVersion: 2
-        x: 103
+        x: 100
         y: 107
-        width: 36
+        width: 59
         height: 81
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -145,20 +145,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 64d5fc4495c54ae4caa8236055db0256
-      internalID: 443380174
+      spriteID: 423e5643c1f8d744eb6efaf98945c2fb
+      internalID: 2073619718
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Klusha_climbing_2
+      name: Oluh climbing_2
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 36
-        height: 88
+        width: 59
+        height: 90
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,19 +166,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ba3131d50920f4741b81a1c57c0d25c2
-      internalID: 657591133
+      spriteID: dad50169d0f60ad4799535e7db63b078
+      internalID: -1744094022
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Klusha_climbing_3
+      name: Oluh climbing_3
       rect:
         serializedVersion: 2
-        x: 103
+        x: 100
         y: 7
-        width: 36
+        width: 59
         height: 81
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -187,8 +187,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: da60cc3b95b181143a73853dab7e9740
-      internalID: -842417171
+      spriteID: f1e7a82aedd4ccc4c8e86e5f5547b0da
+      internalID: -1461079308
       vertices: []
       indices: 
       edges: []
@@ -204,10 +204,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Klusha_climbing_0: -1841675689
-      Klusha_climbing_1: 443380174
-      Klusha_climbing_2: 657591133
-      Klusha_climbing_3: -842417171
+      Oluh climbing_0: 1143038732
+      Oluh climbing_1: 2073619718
+      Oluh climbing_2: -1744094022
+      Oluh climbing_3: -1461079308
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
