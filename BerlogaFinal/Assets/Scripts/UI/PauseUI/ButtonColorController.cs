@@ -7,14 +7,16 @@ public class ButtonColorController : MonoBehaviour
     private ColorBlock _theColor;
     private static Button _currentMainButton;
 
-    
     public bool isMenuButton;
-    
+
+    void Update()
+    {
+    }
+
     void Start()
     {
         if (isMenuButton)
         {
-            _currentMainButton = _button;
             GettingComponent();
             MakeHeadButtonIsMain();
         }
@@ -28,11 +30,12 @@ public class ButtonColorController : MonoBehaviour
     {
         _button = GetComponent<Button>();
         _theColor = _button.GetComponent<Button>().colors;
+        
     }
 
     public void MakeHeadButtonIsMain()
     {
-        MakeHeadButtonIsUsual();
+        //MakeHeadButtonIsUsual();       
         _theColor.normalColor = new Color32(93, 15, 95, 255);
         _button.colors = _theColor;
         _currentMainButton = _button;
