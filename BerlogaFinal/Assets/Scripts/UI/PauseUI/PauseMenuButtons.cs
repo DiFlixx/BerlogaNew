@@ -42,5 +42,7 @@ public class PauseMenuButtons : MonoBehaviour
 
     public void BackToMenu()
     {
+        Time.timeScale = 1f;
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Menu");
     }
 }

@@ -11,4 +11,14 @@ public class ScenesManager : MonoBehaviour
         AsyncOperation async = SceneManager.LoadSceneAsync(name, LoadSceneMode.Additive);
         async.allowSceneActivation = true;
     }
+
+    public void SceneChange(string name)
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene(name);
+    }
+
+    public void Quit()
+    {
+        Application.Quit();
+    }
 }

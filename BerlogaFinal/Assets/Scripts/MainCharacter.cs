@@ -25,6 +25,7 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] AudioSource jumpSound;
     [SerializeField] AudioSource backGroundMusic;
+    [SerializeField] int _maxJumps;
 
     private Vector2 _prePosition;
     private float _currentSpeed;
@@ -33,7 +34,7 @@ public class PlayerController : MonoBehaviour
     private bool isGrounded;
     private TemperatureManager _temperatureManager;
     private ForceMode2D _forceMode = ForceMode2D.Impulse;
-    private int _jumpsLeft = 2;
+    private int _jumpsLeft = 1;
     private Collider2D _collider;
     private bool _isOnLadder = false;
     private bool _isNearLadder = false;
@@ -78,6 +79,7 @@ public class PlayerController : MonoBehaviour
             _isMain = false;
             _playerController._isMain = true;
             _playerController.Enable();
+            
         }
     }
 
@@ -88,6 +90,7 @@ public class PlayerController : MonoBehaviour
         _camera.SetTarget(transform);
         _robot.ChangePlayer(_box);
         rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+        _animator.SetBool("isOff", false);
     }
 
     public void Disable()
@@ -96,9 +99,10 @@ public class PlayerController : MonoBehaviour
         _animator.SetFloat("HorizontalMove", 0f);
         _animator.SetFloat("VerticalMove", 0f);
         enabled = false;
-        rb.velocity = new Vector3(0,0);
+        rb.velocity = new Vector3(0, 0);
         rb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
         rb.angularVelocity = 0;
+        _animator.SetBool("isOff", true);
     }
 
     void Update()
@@ -137,9 +141,10 @@ public class PlayerController : MonoBehaviour
     private void StopClimb()
     {
         _isOnLadder = false;
-        rb.gravityScale = 5;
+        rb.gravityScale = 3f;
         _currentSpeed = speed;
         _isNearLadder = false;
+        _animator.SetBool("IsClimbing", false);
     }
 
     private void Move()
@@ -151,6 +156,7 @@ public class PlayerController : MonoBehaviour
         }
         if (_isOnLadder)
         {
+            _animator.SetBool("IsClimbing", true);
             if (transform.position.y > _boxCollider.bounds.max.y)
             {
                 transform.position = new Vector2(transform.position.x, _boxCollider.bounds.max.y);
@@ -205,7 +211,7 @@ public class PlayerController : MonoBehaviour
         if (collision.transform.CompareTag("Ground"))
         {
             var hit = Physics2D.BoxCast(transform.position, new Vector3(0.01f, 3, 0), 0, Vector2.down, 0.3f, LayerMask.GetMask("Ground"));
-            if (hit) _jumpsLeft = 2;
+            if (hit) _jumpsLeft = _maxJumps;
             _forceMode = ForceMode2D.Impulse;
             isGrounded = true;
             friction = 0.8f;
@@ -214,7 +220,7 @@ public class PlayerController : MonoBehaviour
         else if (collision.transform.CompareTag("Ice"))
         {
             var hit = Physics2D.BoxCast(transform.position, new Vector3(0.01f, 3, 0), 0, Vector2.down, 0.3f, LayerMask.GetMask("Ground"));
-            if (hit) _jumpsLeft = 2;
+            if (hit) _jumpsLeft = _maxJumps;
             _forceMode = ForceMode2D.Force;
             isGrounded = true;
             friction = 0.995f;
