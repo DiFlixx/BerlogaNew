@@ -10,12 +10,12 @@ public class OnHit : Trigger
     [SerializeField]
     private Item _owner;
     private Camera _mainCamera;
-    private PlayerController _playerController;
+    private GameObject _playerController;
 
     private void Start()
     {
         _mainCamera = Camera.main;
-        _playerController = FindAnyObjectByType<PlayerController>();
+        _playerController = FindAnyObjectByType<GameObject>();
     }
 
     void Update()

@@ -14,16 +14,16 @@ public class RobotHelper : Item, ITurnOnable, ITurnOffable
 
     [SerializeField]
     private float _speed;
-    private GameObject _controller;
+    private UnityEngine.GameObject _controller;
     [SerializeField]
-    private GameObject _inventoryUI;
+    private UnityEngine.GameObject _inventoryUI;
     [SerializeField]
     private Inventory _inventory;
     [SerializeField]
     private float _distance;
     private States _state;
-    private GameObject _currentTarget;
-    private Stack<GameObject> _stack;
+    private UnityEngine.GameObject _currentTarget;
+    private Stack<UnityEngine.GameObject> _stack;
     private bool _foodFound;
     private Rigidbody2D _rb;
     private Vector2 previousPosition;
@@ -35,7 +35,7 @@ public class RobotHelper : Item, ITurnOnable, ITurnOffable
             return;
         }
         var food = FindObjectsOfType<FoodPickup>();
-        GameObject obj = null;
+        UnityEngine.GameObject obj = null;
         float distance = 0f;
         foreach (var i in food)
         {
@@ -103,7 +103,7 @@ public class RobotHelper : Item, ITurnOnable, ITurnOffable
     private void Awake()
     {
         _state = States.Follow; _currentTarget = _controller.gameObject;
-        _stack = new Stack<GameObject>();
+        _stack = new Stack<UnityEngine.GameObject>();
         _rb = GetComponent<Rigidbody2D>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
     }
@@ -145,7 +145,7 @@ public class RobotHelper : Item, ITurnOnable, ITurnOffable
         _inventoryUI.gameObject.SetActive(false);
     }
 
-    public void ChangePlayer(GameObject obj)
+    public void ChangePlayer(UnityEngine.GameObject obj)
     {
         _currentTarget = obj;
         _controller = obj;

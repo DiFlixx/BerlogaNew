@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class NoFireStep : MonoBehaviour
 {
-    public GameObject plank;
-    public GameObject stick;
-    public GameObject NoFire;
+    public UnityEngine.GameObject plank;
+    public UnityEngine.GameObject stick;
+    public UnityEngine.GameObject NoFire;
     public bool IsTouchingStick = false;
     public bool IsTouchingPlank = false;
 

@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Box : MonoBehaviour
 {
-    public GameObject itemToSpawn;
+    public UnityEngine.GameObject itemToSpawn;
     public Transform spawnPoint;
     public Sprite empty;
 

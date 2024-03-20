@@ -3,7 +3,7 @@ using UnityEngine;
 public class PauseMenuButtons : MonoBehaviour
 {
     public PausePanelController pausePanelController;
-    [SerializeField] private GameObject _shading;
+    [SerializeField] private UnityEngine.GameObject _shading;
     [SerializeField] private AudioSource buttonSound;
 
     private void Update()

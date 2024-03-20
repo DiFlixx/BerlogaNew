@@ -9,7 +9,7 @@ public class FoodPickup : Pickup
     {
         return () => 
         {
-            HungerSystem hungerSystem = GameObject.FindAnyObjectByType<HungerSystem>();
+            HungerSystem hungerSystem = UnityEngine.GameObject.FindAnyObjectByType<HungerSystem>();
             hungerSystem.Eat(1);
         };
     }

@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class PauseScript : MonoBehaviour
 {
-    public GameObject PausePanel;
+    public UnityEngine.GameObject PausePanel;
 
     private void Update()
     {

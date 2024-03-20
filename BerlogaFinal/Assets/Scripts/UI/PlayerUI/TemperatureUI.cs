@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,9 +10,7 @@ public class TemperatureUI : MonoBehaviour
     private TemperatureManager temperatureManager;
 
     [SerializeField]
-    private Image temperatureIcon;
-    [SerializeField]
-    private Sprite[] temperatureSprites;
+    private GameObject[] temperatureSprites;
 
     public void UpdateTemperatureUI()
     {
@@ -19,7 +18,11 @@ public class TemperatureUI : MonoBehaviour
 
         int temperatureType = Mathf.Clamp(temperature/10, 0, temperatureSprites.Length - 1);
 
-        temperatureIcon.sprite = temperatureSprites[temperatureType];
+        if (temperatureType != temperatureSprites.Length - 1)
+        {
+            temperatureSprites[temperatureType+1].SetActive(false);
+        }
+        temperatureSprites[temperatureType].SetActive(true);
     }
 
     void Start()

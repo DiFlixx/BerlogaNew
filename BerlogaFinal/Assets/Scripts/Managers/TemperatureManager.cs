@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TemperatureManager : MonoBehaviour
 {
-    public int maxTemperature = 70;
+    public int maxTemperature = 79;
     public int currentTemperature;
     public int temperatureDecayRate = 1;
     [SerializeField]
@@ -19,7 +19,7 @@ public class TemperatureManager : MonoBehaviour
     {
         _currentDecay = temperatureDecayRate;
         currentTemperature = maxTemperature;
-        InvokeRepeating("DecayTemperature", 2f, 2f);
+        InvokeRepeating("DecayTemperature", 1f, 1f);
     }
 
     public void Pause()
@@ -37,7 +37,7 @@ public class TemperatureManager : MonoBehaviour
         currentTemperature -= _currentDecay; ;
         currentTemperature = Mathf.Clamp(currentTemperature, 0, maxTemperature);
         _temperatureUI.UpdateTemperatureUI();
-        if (currentTemperature <= 0)
+        if (currentTemperature <= 9)
         {
             _healthManager.TakeDamage(1);
         }

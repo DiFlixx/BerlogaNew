@@ -5,10 +5,10 @@ using UnityEngine;
 
 public class FirstStep : MonoBehaviour
 {
-    public GameObject String;
-    public GameObject Plank;
-    public GameObject Stick;
-    public GameObject Bow;
+    public UnityEngine.GameObject String;
+    public UnityEngine.GameObject Plank;
+    public UnityEngine.GameObject Stick;
+    public UnityEngine.GameObject Bow;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {

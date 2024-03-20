@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class ShowText : MonoBehaviour
 {
-    [SerializeField] private GameObject[] _texts;
+    [SerializeField] private UnityEngine.GameObject[] _texts;
 
     public void ActivateText(int indexOfText)
     {
@@ -10,7 +10,7 @@ public class ShowText : MonoBehaviour
         _texts[indexOfText].SetActive(true);
     }
 
-    private void HideAllTexts(GameObject[] _texts)
+    private void HideAllTexts(UnityEngine.GameObject[] _texts)
     {
         for (int i = 0; i < _texts.Length; i++)
         {

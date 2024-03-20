@@ -13,8 +13,8 @@ public class CheckPointScript : MonoBehaviour
 
     void Awake()
     {
-        player1 = GameObject.Find("MainCharacter").transform;
-        player2 = GameObject.Find("MainCharacter2").transform;
+        player1 = UnityEngine.GameObject.Find("MainCharacter").transform;
+        player2 = UnityEngine.GameObject.Find("MainCharacter2").transform;
 
         if (DataContainer.checkpointindex == index) 
         {

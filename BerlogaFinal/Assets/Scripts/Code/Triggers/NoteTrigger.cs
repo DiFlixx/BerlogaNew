@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class NoteTrigger : MonoBehaviour
 {
-	[SerializeField] private GameObject _button;
+	[SerializeField] private UnityEngine.GameObject _button;
 
 	void OnTriggerEnter2D(Collider2D other)
 	{

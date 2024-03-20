@@ -7,7 +7,7 @@ public class FoodMachine : Item, ITurnOffable, ITurnOnable, ICanGiveFood
     private float cooldownTime = 5f;
 
     [SerializeField]
-    private GameObject _food;
+    private UnityEngine.GameObject _food;
     [SerializeField]
     private Sprite _turnedOff;
     [SerializeField]

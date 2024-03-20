@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class StickButton : MonoBehaviour
 {
-    private PlayerController _controller;
-    [SerializeField] private GameObject target;
+    private GameObject _controller;
+    [SerializeField] private UnityEngine.GameObject target;
 
     void Start()
     {
-        _controller = FindObjectOfType<PlayerController>();
     }
 
     public void Create()
     {
-        Instantiate(target.gameObject, _controller.transform.position - new Vector3(0, 0.6f, 0), Quaternion.identity);
+        _controller = FindAnyObjectByType<GameObject>();
+        Instantiate(target.gameObject, _controller.transform.position + new Vector3(0, 1.6f, 0), Quaternion.identity);
     }
 }

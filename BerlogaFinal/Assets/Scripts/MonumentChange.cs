@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class MonumentChange : MonoBehaviour
 {
-    [SerializeField] private GameObject[] _monuments;
+    [SerializeField] private UnityEngine.GameObject[] _monuments;
 
     static int index = 0;
 

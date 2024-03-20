@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class DoorScript : MonoBehaviour
 {
-    public GameObject hint;
+    public UnityEngine.GameObject hint;
     public bool isPlayerNear = false;
 
     private void HideHintE()

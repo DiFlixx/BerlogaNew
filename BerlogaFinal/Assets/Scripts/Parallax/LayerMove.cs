@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LayerMove : MonoBehaviour
 {
-    public GameObject cam;
+    public UnityEngine.GameObject cam;
     float startPosX;
     public float Parallax;
 

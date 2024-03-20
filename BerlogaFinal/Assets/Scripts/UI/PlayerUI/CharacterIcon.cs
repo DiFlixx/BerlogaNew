@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class CharacterIcon : MonoBehaviour
 {
-    [SerializeField] private GameObject MaleIcon, FemaleIcon;
+    [SerializeField] private UnityEngine.GameObject MaleIcon, FemaleIcon;
     [SerializeField] PlayerController MaleCharacter, FemaleCharacter;
     
     void Update()

@@ -20,7 +20,7 @@ public class Slot : MonoBehaviour
     {
         foreach (Transform child in transform)
         {
-            GameObject.Destroy(child.gameObject);
+            UnityEngine.GameObject.Destroy(child.gameObject);
             IsFull = false;
         }
     }

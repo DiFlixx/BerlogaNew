@@ -9,6 +9,7 @@ public abstract class Pickup : MonoBehaviour
 
     private Inventory _inventory;
     private bool _isPicking;
+    private bool _entered;
 
     protected abstract Action GetAction();
         
@@ -17,9 +18,43 @@ public abstract class Pickup : MonoBehaviour
         _inventory = FindAnyObjectByType<Inventory>();
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            _entered = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            _entered = false;
+        }
+    }
+
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player") && Input.GetKeyDown(KeyCode.E) && !_isPicking)
+        if (collision.TryGetComponent<RobotHelper>(out var robot))
+        {
+            for (int i = 0; i < _inventory.slots.Length; i++)
+            {
+                if (_inventory.slots[i].IsFull == false)
+                {
+                    robot.FoodPicked();
+                    _inventory.slots[i].IsFull = true;
+                    Instantiate(Itembutton, _inventory.slots[i].transform, false).Init(_inventory.slots[i], GetAction());
+                    Destroy(gameObject);
+                    break;
+                }
+            }
+        }
+    }
+
+    private void Update()
+    {
+        if (_entered && Input.GetKey(KeyCode.E) && !_isPicking)
         {
             _isPicking = true;
             for (int i = 0; i < _inventory.slots.Length; i++)

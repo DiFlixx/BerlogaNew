@@ -5,9 +5,9 @@ using UnityEngine;
 public class Lantern : Item, ICanLight, ICanStopLight, ICanLightBrighter
 {
     [SerializeField]
-    private GameObject _light;
+    private UnityEngine.GameObject _light;
     [SerializeField]
-    private GameObject _light2;
+    private UnityEngine.GameObject _light2;
 
     public void Light()
     {

@@ -9,7 +9,7 @@ using UnityEngine.UI;
 public class CodePanel : MonoBehaviour
 {
     [SerializeField]
-    private GameObject _removeHint;
+    private UnityEngine.GameObject _removeHint;
     [SerializeField]
     private RectTransform _commandsContent;
     [SerializeField]
@@ -19,7 +19,7 @@ public class CodePanel : MonoBehaviour
     [SerializeField]
     private RectTransform _triggerContainer;
     [SerializeField]
-    private GameObject _owner;
+    private UnityEngine.GameObject _owner;
     [SerializeField]
     private Button _button;
     [SerializeField]
@@ -27,7 +27,7 @@ public class CodePanel : MonoBehaviour
 
     private void Awake()
     {
-        GameObject obj = new GameObject(this.GetType().Name);
+        UnityEngine.GameObject obj = new UnityEngine.GameObject(this.GetType().Name);
     }
 
     void Start()
@@ -73,7 +73,7 @@ public class CodePanel : MonoBehaviour
         _removeHint.SetActive(value);
     }
 
-    public void HandleDrop(GameObject gameObject, GameObject dropObject)
+    public void HandleDrop(UnityEngine.GameObject gameObject, UnityEngine.GameObject dropObject)
     {
         if (dropObject == _removeHint || dropObject == null)
         {

@@ -6,12 +6,12 @@ public class PlayerIsNear : Trigger
 {
     [SerializeField]
     private float _distance;
-    private PlayerController _playerController;
+    private GameObject _playerController;
     private bool _isNear;
 
     private void Start()
     {
-        _playerController = FindAnyObjectByType<PlayerController>();
+        _playerController = FindAnyObjectByType<GameObject>();
     }
 
     void Update()

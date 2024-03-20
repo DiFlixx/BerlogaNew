@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class HintController : MonoBehaviour
 {
-    [SerializeField] private GameObject _hint;
+    [SerializeField] private UnityEngine.GameObject _hint;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private PlayerController _playerController;
     [SerializeField]
-    private GameObject _box;
+    private UnityEngine.GameObject _box;
 
     [SerializeField] AudioSource jumpSound;
     [SerializeField] AudioSource backGroundMusic;

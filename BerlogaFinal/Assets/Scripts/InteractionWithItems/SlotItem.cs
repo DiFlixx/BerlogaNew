@@ -10,14 +10,9 @@ public class SlotItem : MonoBehaviour
     private Image _image;
     [SerializeField]
     private Button _button;
-    
-    public GameObject _container;
-
-    private Slot _slot;
 
     public void Init(Slot slot, Action action)
     {
-        _slot = slot;
         _button.onClick.AddListener(slot.MakeSlotEmpty);
         _button.onClick.AddListener(action.Invoke);
     }

@@ -5,7 +5,7 @@ using UnityEngine;
 public class Heater : Item, ITurnOffable, ITurnOnable
 {
     [SerializeField]
-    private GameObject _heatArea;
+    private UnityEngine.GameObject _heatArea;
     [SerializeField]
     private Sprite _turnOffImage;
     [SerializeField]

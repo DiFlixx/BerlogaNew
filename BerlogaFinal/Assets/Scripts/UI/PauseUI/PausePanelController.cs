@@ -2,11 +2,11 @@ using UnityEngine;
 
 public class PausePanelController : MonoBehaviour
 {
-    [SerializeField] private GameObject[] _buttonsChangers;
-    [SerializeField] private GameObject[] _panels;
-    [SerializeField] private GameObject _menuPanel;
+    [SerializeField] private UnityEngine.GameObject[] _buttonsChangers;
+    [SerializeField] private UnityEngine.GameObject[] _panels;
+    [SerializeField] private UnityEngine.GameObject _menuPanel;
 
-    private void ButtonsChangersController(GameObject[] buttons, bool activeStatus)
+    private void ButtonsChangersController(UnityEngine.GameObject[] buttons, bool activeStatus)
     {
         for (int i = 0; i < buttons.Length; i++)
         {
@@ -30,7 +30,7 @@ public class PausePanelController : MonoBehaviour
         }
     }
 
-    private void HideAllPanels(GameObject[] panels)
+    private void HideAllPanels(UnityEngine.GameObject[] panels)
     {
         for (int i = 0; i < panels.Length; i++)
         {

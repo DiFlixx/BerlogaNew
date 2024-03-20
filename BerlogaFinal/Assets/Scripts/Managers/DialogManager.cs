@@ -21,7 +21,7 @@ public class DialogueManager : MonoBehaviour
 
     public float typingSpeed = 0.2f;
 
-    public GameObject _dialog;
+    public UnityEngine.GameObject _dialog;
 
     private void Awake()
     {

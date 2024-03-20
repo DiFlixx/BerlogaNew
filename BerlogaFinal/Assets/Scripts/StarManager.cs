@@ -74,7 +74,7 @@ public class StarManager : MonoBehaviour
         _text.text = "Connections left:" + _connetionsLeft;
     }
 
-    private void BreakConnection(Star star1, Star star2, GameObject obj)
+    private void BreakConnection(Star star1, Star star2, UnityEngine.GameObject obj)
     {
         if (!IsOverStar && !_isBinding && !ConnectionsCompleted())
         {

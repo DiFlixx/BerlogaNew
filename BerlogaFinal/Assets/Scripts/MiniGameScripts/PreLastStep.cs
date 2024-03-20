@@ -11,7 +11,7 @@ public class PreLastEtap : MonoBehaviour
     }
 
     public int clicks;
-    public GameObject FireThing;
+    public UnityEngine.GameObject FireThing;
     public AudioSource sound;
 
     private void OnMouseDown()
