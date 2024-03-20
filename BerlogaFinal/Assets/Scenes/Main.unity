@@ -3581,7 +3581,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 350182190400360340, guid: 97783401a1f89c34f91013b39329f1ae, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 279.4392
+      value: 263.6807
       objectReference: {fileID: 0}
     - target: {fileID: 350182190400360340, guid: 97783401a1f89c34f91013b39329f1ae, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -3994,6 +3994,10 @@ PrefabInstance:
     - target: {fileID: 7705664185438597318, guid: 97783401a1f89c34f91013b39329f1ae, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7900116200895949852, guid: 97783401a1f89c34f91013b39329f1ae, type: 3}
+      propertyPath: m_VerticalAlignment
+      value: 512
       objectReference: {fileID: 0}
     - target: {fileID: 8116015228419839888, guid: 97783401a1f89c34f91013b39329f1ae, type: 3}
       propertyPath: temperatureManager
