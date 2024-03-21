@@ -6,12 +6,6 @@ public class BaseButton : MonoBehaviour
 {
     [SerializeField] 
     private GameObject target;
-    private MiniGameManager _miniGameManager;
-
-    private void Start()
-    {
-        _miniGameManager = FindFirstObjectByType<MiniGameManager>();
-    }
 
     public void Create()
     {
@@ -20,7 +14,6 @@ public class BaseButton : MonoBehaviour
         if (controller._isMain)
         {
             Instantiate(target.gameObject, controller.transform.position - new Vector3(0, 0.2f, 0.1f), Quaternion.identity);
-            _miniGameManager.MiniGame();
         }
     }
 }
