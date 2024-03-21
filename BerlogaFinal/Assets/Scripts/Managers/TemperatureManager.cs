@@ -34,13 +34,15 @@ public class TemperatureManager : MonoBehaviour
 
     void DecayTemperature()
     {
-        currentTemperature -= _currentDecay; ;
-        currentTemperature = Mathf.Clamp(currentTemperature, 0, maxTemperature);
-        _temperatureUI.UpdateTemperatureUI();
         if (currentTemperature <= 9)
         {
             _healthManager.TakeDamage(1);
+            return;
         }
+
+        currentTemperature -= _currentDecay; ;
+        currentTemperature = Mathf.Clamp(currentTemperature, 0, maxTemperature);
+        _temperatureUI.UpdateTemperatureUI();
     }
 
     public int GetTemperature()

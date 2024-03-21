@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 public class HealthManager : MonoBehaviour
 {
     [SerializeField]
-    private int _maxHealth = 6;
+    private int _maxHealth = 7;
     [SerializeField]
     private HealthBar _healthBar;
 
