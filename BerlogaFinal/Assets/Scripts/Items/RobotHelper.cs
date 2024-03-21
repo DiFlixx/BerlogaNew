@@ -1,8 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using System;
 
 public class RobotHelper : Item, ITurnOnable, ITurnOffable
 {
@@ -13,20 +15,49 @@ public class RobotHelper : Item, ITurnOnable, ITurnOffable
     }
 
     [SerializeField]
-    private float _speed;
-    private UnityEngine.GameObject _controller;
+    private GameObject _c1;
+
+
     [SerializeField]
-    private UnityEngine.GameObject _inventoryUI;
+    private GameObject _textBlock;
+    [SerializeField]
+    private TextMeshPro _text;
+    [SerializeField]
+    private string[] _texts;
+
+
+    [SerializeField]
+    private float _speed;
+    private GameObject _controller;
+    [SerializeField]
+    private GameObject _inventoryUI;
     [SerializeField]
     private Inventory _inventory;
     [SerializeField]
     private float _distance;
     private States _state;
-    private UnityEngine.GameObject _currentTarget;
-    private Stack<UnityEngine.GameObject> _stack;
+    private GameObject _currentTarget;
+    private Stack<GameObject> _stack;
     private bool _foodFound;
     private Rigidbody2D _rb;
+    private SpriteRenderer _spriteRenderer;
     private Vector2 previousPosition;
+
+
+    private async void TellHint()
+    {
+        System.Random random = new System.Random();
+        int rIndex = random.Next(0, _texts.Length);
+        _text.text = _texts[rIndex];
+        _textBlock.SetActive(true);
+        await Task.Delay(7000);
+        _textBlock.SetActive(false);
+    }
+
+    private void Start()
+    {
+        InvokeRepeating("TellHint", 30f, 30f);
+    }
 
     public void FindFood()
     {
@@ -35,7 +66,7 @@ public class RobotHelper : Item, ITurnOnable, ITurnOffable
             return;
         }
         var food = FindObjectsOfType<FoodPickup>();
-        UnityEngine.GameObject obj = null;
+        GameObject obj = null;
         float distance = 0f;
         foreach (var i in food)
         {
@@ -64,7 +95,7 @@ public class RobotHelper : Item, ITurnOnable, ITurnOffable
 
     private void FixedUpdate()
     {
-        if (_state == States.Follow) 
+        if (_state == States.Follow)
         {
             _currentTarget = _controller.gameObject;
         }
@@ -102,8 +133,9 @@ public class RobotHelper : Item, ITurnOnable, ITurnOffable
 
     private void Awake()
     {
+        _controller = _c1;
         _state = States.Follow; _currentTarget = _controller.gameObject;
-        _stack = new Stack<UnityEngine.GameObject>();
+        _stack = new Stack<GameObject>();
         _rb = GetComponent<Rigidbody2D>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
     }
@@ -145,7 +177,7 @@ public class RobotHelper : Item, ITurnOnable, ITurnOffable
         _inventoryUI.gameObject.SetActive(false);
     }
 
-    public void ChangePlayer(UnityEngine.GameObject obj)
+    public void ChangePlayer(GameObject obj)
     {
         _currentTarget = obj;
         _controller = obj;
