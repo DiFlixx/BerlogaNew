@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Threading;
 using UnityEngine;
 
 namespace Assets
@@ -18,7 +19,13 @@ namespace Assets
             {
                 sound.Play();
                 sound = null;
+                ChangeScene();
             }
+        }
+
+        private void ChangeScene()
+        {
+            UnityEngine.SceneManagement.SceneManager.LoadScene("Main");
         }
     }
 }

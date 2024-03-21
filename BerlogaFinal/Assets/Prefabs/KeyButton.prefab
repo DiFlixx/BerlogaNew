@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7941792739253421799}
   - component: {fileID: 8055599551129022909}
   m_Layer: 5
-  m_Name: StickButton
+  m_Name: KeyButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -68,7 +68,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 560b5ab0dbea79940ac2ffc5aab633d0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 468db39508bed7248bb0dcff5ceb7794, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -160,4 +160,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d16f185ea3172047b567075a946a773, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 6074538190327647539, guid: 52172da1cbc10ca4981996da0fc0b1af, type: 3}
+  target: {fileID: 8365682423475068168, guid: 46ad537f7ec7eb04eb502c95c17ac10d, type: 3}

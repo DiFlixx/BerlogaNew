@@ -7,6 +7,11 @@ public abstract class Pickup : MonoBehaviour
 {
     public SlotItem Itembutton;
 
+    [SerializeField]
+    private bool _isFood;
+    [SerializeField]
+    private int _index;
+
     private Inventory _inventory;
     private bool _isPicking;
     private bool _entered;
@@ -36,7 +41,7 @@ public abstract class Pickup : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.TryGetComponent<RobotHelper>(out var robot))
+        if (collision.TryGetComponent<RobotHelper>(out var robot) && _isFood)
         {
             for (int i = 0; i < _inventory.slots.Length; i++)
             {
@@ -62,6 +67,7 @@ public abstract class Pickup : MonoBehaviour
                 if (_inventory.slots[i].IsFull == false)
                 {
                     _inventory.slots[i].IsFull = true;
+                    _inventory.slots[i].SetIndex(_index);
                     Instantiate(Itembutton, _inventory.slots[i].transform, false).Init(_inventory.slots[i], GetAction());
                     Destroy(gameObject);
                     break;
