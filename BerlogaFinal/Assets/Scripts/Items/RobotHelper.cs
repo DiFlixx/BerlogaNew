@@ -47,7 +47,7 @@ public class RobotHelper : Item, ITurnOnable, ITurnOffable
     private async void TellHint()
     {
         System.Random random = new System.Random();
-        int rIndex = random.Next(0, _texts.Length);
+        int rIndex = random.Next(0, _texts.Length - 1);
         _text.text = _texts[rIndex];
         _textBlock.SetActive(true);
         await Task.Delay(7000);
@@ -56,7 +56,7 @@ public class RobotHelper : Item, ITurnOnable, ITurnOffable
 
     private void Start()
     {
-        InvokeRepeating("TellHint", 30f, 30f);
+        InvokeRepeating("TellHint", 18f, 18f);
     }
 
     public void FindFood()
