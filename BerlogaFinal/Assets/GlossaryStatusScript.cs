@@ -10,7 +10,6 @@ public class GlossaryStatusScript : MonoBehaviour
 
     void Update()
     {
-        Debug.Log("fafaaf");
         if (Input.GetKeyDown(KeyCode.Y))
             if (_isOn)
             {

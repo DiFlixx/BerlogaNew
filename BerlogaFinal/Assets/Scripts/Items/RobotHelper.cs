@@ -42,20 +42,22 @@ public class RobotHelper : Item, ITurnOnable, ITurnOffable
     private Rigidbody2D _rb;
     private SpriteRenderer _spriteRenderer;
     private Vector2 previousPosition;
+    private System.Random _random;
 
 
     private async void TellHint()
     {
-        System.Random random = new System.Random();
-        int rIndex = random.Next(0, _texts.Length - 1);
+        int rIndex = _random.Next(0, _texts.Length - 1);
         _text.text = _texts[rIndex];
         _textBlock.SetActive(true);
         await Task.Delay(7000);
         _textBlock.SetActive(false);
+        _random = new System.Random(rIndex);
     }
 
     private void Start()
     {
+        _random = new System.Random();
         InvokeRepeating("TellHint", 18f, 18f);
     }
 

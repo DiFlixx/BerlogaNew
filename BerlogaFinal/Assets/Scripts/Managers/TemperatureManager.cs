@@ -19,7 +19,7 @@ public class TemperatureManager : MonoBehaviour
     {
         _currentDecay = temperatureDecayRate;
         currentTemperature = maxTemperature;
-        InvokeRepeating("DecayTemperature", 1f, 1f);
+        InvokeRepeating("DecayTemperature", 4f, 4f);
     }
 
     public void Pause()
