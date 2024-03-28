@@ -1,18 +1,26 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class GuideScript : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
+    [SerializeField] private GameObject guideTextEsc, guideTextTab, guideTextY, guideTextSpace;
+    
     void Update()
     {
-        
+        if (Input.GetKey(KeyCode.Escape))
+        {
+            Destroy(guideTextEsc);
+        }
+        else if (Input.GetKey(KeyCode.Tab))
+        {
+            Destroy(guideTextTab);
+        }
+        else if (Input.GetKey(KeyCode.Y))
+        {
+            Destroy(guideTextY);
+        }
+        else if (Input.GetKey(KeyCode.Space))
+        {
+            Destroy(guideTextSpace);
+        }
     }
 }
