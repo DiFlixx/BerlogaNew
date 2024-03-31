@@ -9,7 +9,6 @@ public class MinigameTrigger : MonoBehaviour
 
     void Start()
     {
-        
     }
     
     private void TriggerEvent()
